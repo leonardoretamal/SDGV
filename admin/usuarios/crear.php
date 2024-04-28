@@ -7,29 +7,29 @@ include("../../admin/layout/parte1.php"); ?>
         <div class="col-md-12">
             <div class="card card-outline card-primary">
                 <div class="card-header">
-                    <p class="h3 text-center" ><b>datos del usuario </b></p>
+                    <p class="h3 text-center"><b>datos del usuario </b></p>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-
-                    <form action="" method="">
+                    <!-- se envia formulario a controlador -->
+                    <form action="../../app/controllers/usuarios/crear.php" method="post"> <!-- mas seguro -->
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Nombre completo</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="nombre_completo" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Correo electronico</label>
-                                    <input type="email" class="form-control">
+                                    <input type="email" name="email" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Cargo</label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="cargo" id="" class="form-control">
                                         <option value="ADMINISTRADOR">ADMINISTRADOR</option>
                                         <option value="Cliente">Cliente</option>
                                         <option value="Recepcionista">Recepcionista</option>
@@ -43,13 +43,13 @@ include("../../admin/layout/parte1.php"); ?>
                             <div class="col-md-6">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Contraseña</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="password" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Verifique contraseña</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="password_verify" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ include("../../admin/layout/parte1.php"); ?>
                             </div>
                         </div>
                     </form>
-                    
+
                 </div>
                 <!-- /.card-body -->
             </div>
