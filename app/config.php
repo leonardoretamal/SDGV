@@ -1,7 +1,7 @@
 <?php 
 
 
-define("APP_NAME","SISTEMA DE VETERINARIO - SDGV");
+define("APP_NAME","SISTEMA DE GESTION VETERINARIO - SDGV");
 define("SERVIDOR","localhost");
 define("USUARIO","root");
 define("PASSWORD","");

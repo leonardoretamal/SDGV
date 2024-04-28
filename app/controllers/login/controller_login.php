@@ -20,6 +20,9 @@ foreach ($usuarios as $usuario) {
 $hash = $password_tabla; //contrausuario
 if (($contador > 0) && (password_verify($password, $hash))) {
   echo "Bienvenido al sistema";
+  header('Location: '.$URL.'/admin');
 } else {
   echo "error en los datos";
+  header('Location: '.$URL.'/login');
+
 }
