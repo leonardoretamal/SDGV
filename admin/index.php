@@ -1,5 +1,15 @@
 <?php
 include("../app/config.php"); //para tener conexion a base de datos.
+
+
+session_start(); //volvemos a habilitar la variable de sesion
+if (isset($_SESSION["sesion email"])) 
+{
+echo "Ha pasado por el login";
+} else {
+    //echo "no ha pasado por el login";
+    header('Location: '. $URL.'/login'); //vuelve al login
+}
 ?>
 <!DOCTYPE html>
 <!--

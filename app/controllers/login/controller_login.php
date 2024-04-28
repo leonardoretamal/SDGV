@@ -20,9 +20,11 @@ foreach ($usuarios as $usuario) {
 $hash = $password_tabla; //contrausuario
 if (($contador > 0) && (password_verify($password, $hash))) {
   echo "Bienvenido al sistema";
+  session_start(); //se crea la sesion
+  $_SESSION['sesion email'] = $email; //copiamos la variable a otras vistas
   header('Location: '.$URL.'/admin');
 } else {
   echo "error en los datos";
-  header('Location: '.$URL.'/login');
+  header('Location: '. $URL.'/login');
 
 }
