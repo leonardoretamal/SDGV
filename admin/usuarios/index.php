@@ -26,9 +26,11 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($usuarios as $usuario) { ?>
+                            $contador = 0;
+                            foreach ($usuarios as $usuario) { 
+                                $contador ++;?>
                                 <tr>
-                                    <td><?php echo $usuario['id_usuario']; ?></td>
+                                    <td><?php echo $contador; ?></td>
                                     <td><?php echo $usuario['nombre_completo']; ?></td>
                                     <td><?php echo $usuario['email']; ?></td>
                                     <td><?php echo $usuario['cargo']; ?></td>

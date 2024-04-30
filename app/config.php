@@ -18,3 +18,5 @@ try{
 
 $URL = "http://localhost/SDGV";
 
+date_default_timezone_set('America/Santiago');
+$fechaHora = date ('Y-m-d H:i:s'); //lo enviamos a crear.php
