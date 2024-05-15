@@ -19,16 +19,16 @@ include("../app/config.php");
   <link rel="stylesheet" href="<?php echo $URL;?>/public/templeates/AdminLTE-3.2.0/dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="<?php echo $URL;?>/public/templeates/AdminLTE-3.2.0/index2.html"><b>INCIAR </b>SESION</a>
+<div class="login-box ">
+  <div class="login-logo" >
+    <a  href="<?php echo $URL;?>/public/templeates/AdminLTE-3.2.0/index2.html"><b>INCIAR </b>SESION</a>
   </div>
   <!-- /.login-logo -->
 
   <div class="card">
-    <div class="card-body login-card-body">
+    <div class="card-body login-card-body border border-info">
       <div class="mb-4">
-         <a href="<?php echo $URL;?>"> <button type="button"  class="btn btn-outline-secondary btn-sm">
+         <a href="<?php echo $URL;?>"> <button type="button"  class="btn btn-outline-primary btn-sm">
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"></path>
          </svg>
@@ -39,9 +39,9 @@ include("../app/config.php");
       <p class="login-box-msg">Ingresa tus datos</p>
 
       <form action="<?php echo $URL;?>/app/controllers/login/controller_login.php" method="post">
-      <label for="">Correo electronico</label>
+      <label for="email">Correo electronico</label>
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Ingresa tu correo..">
+          <input type="email" id="email" name="email" class="form-control" placeholder="Ingresa tu correo..">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -59,9 +59,9 @@ include("../app/config.php");
           </div>
         </div>
         <hr>
-        <button type="submit" class="btn btn-primary" style="width:100%">Ingresar</button>
+        <button type="submit" class="btn btn-outline-primary" style="width:100%">Ingresar</button>
         <br><br>
-        <a href="" class="btn btn-secondary" style="width:100%">Cancelar</a>
+        <a href="" class="btn btn-outline-secondary" style="width:100%">Cancelar</a>
       </form>
     <!-- /.login-card-body -->
   </div>
