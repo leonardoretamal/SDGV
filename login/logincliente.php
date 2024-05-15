@@ -21,9 +21,9 @@ include("../app/config.php");
 <body class="hold-transition login-page">
 
 <div class="login-box">
-  <div class="login-logo">
-    <a href="#"><b>INCIAR </b>SESION</a>
-  </div>
+<div class="login-logo fs-1">
+    <h2 class="text-primary">INICIAR SESIÓN</h2>
+</div>
   <!-- /.login-logo -->
 
   <div class="card">
@@ -34,7 +34,7 @@ include("../app/config.php");
             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"></path>
             </svg>
             <span class="visually-hidden"></span>
-            </button> </a>
+            </button></a>
         </div>
       <center><img src="<?php echo $URL;?>/private/img/logologin.png" width="50%" alt=""></center>
       <p class="login-box-msg">Ingresa tus datos</p>
@@ -60,9 +60,9 @@ include("../app/config.php");
           </div>
         </div>
         <hr>
-        <button type="submit" class="btn btn-primary" style="width:100%">Ingresar</button>
+        <button type="submit" class="btn btn-outline-primary" style="width:100%">Ingresar</button>
         <br><br>
-        <a href="" class="btn btn-secondary" style="width:100%">Cancelar</a>
+        <a href="" class="btn btn-outline-secondary" style="width:100%">Cancelar</a>
       </form>
     <!-- /.login-card-body -->
   </div>
