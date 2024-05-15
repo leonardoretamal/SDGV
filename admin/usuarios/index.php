@@ -55,4 +55,8 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
         </div>
     </div>
 </div>
-<?php include("../../admin/layout/parte2.php");
+
+<?php 
+include("../../admin/layout/parte2.php");
+include("../../admin/layout/mensaje.php");
+?>

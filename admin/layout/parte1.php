@@ -1,11 +1,10 @@
-<?php 
+<?php
 session_start(); //volvemos a habilitar la variable de sesion
-if (isset($_SESSION["sesion email"])) 
-{
-/* echo "Ha pasado por el login"; */
+if (isset($_SESSION["sesion email"])) {
+    /* echo "Ha pasado por el login"; */
 } else {
     //echo "no ha pasado por el login";
-    header('Location: '. $URL.'/login'); //vuelve al login
+    header('Location: ' . $URL . '/login'); //vuelve al login
 }
 ?>
 <!DOCTYPE html>
@@ -26,6 +25,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo $URL; ?>/public/templeates/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo $URL; ?>/public/templeates/AdminLTE-3.2.0/dist/css/adminlte.min.css">
+
+    <!-- jQuery -->
+    <script src="<?php echo $URL; ?>/public/templeates/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -90,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?php echo $URL;?>/admin/usuarios" class="nav-link ">
+                                    <a href="<?php echo $URL; ?>/admin/usuarios" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lista de usuarios</p>
                                     </a>
@@ -105,7 +110,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?php echo $URL;?>/app/controllers/login/cerrar_sesion.php" class="nav-link active" style="background-color: red;">
+                            <a href="<?php echo $URL; ?>/app/controllers/login/cerrar_sesion.php" class="nav-link active" style="background-color: red;">
                                 <i class="nav-icon fas fa-door-open"></i>
                                 <p>
                                     Cerrar Sesion

@@ -69,4 +69,8 @@ include("../../admin/layout/parte1.php"); ?>
         </div>
     </div>
 </div>
-<?php include("../../admin/layout/parte2.php");
+<?php 
+include("../../admin/layout/parte2.php");
+include("../../admin/layout/mensaje.php");
+?>
+
