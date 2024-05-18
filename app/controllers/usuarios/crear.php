@@ -30,7 +30,7 @@ if ($contador > 0) {
     //consulta que nos trae el listado de usuarios a $usuarios
     if ($password == $password_verify) {
         //echo "son iguales";
-        $password = password_hash($password, PASSWORD_DEFAULT); //encriptamos la contraseña luego de verificarlas
+        $password = password_hash($password, PASSWORD_DEFAULT); //encriptamos la contraseña luego de verificarlas y luego la guardamos
 
         $sentencia = $pdo->prepare("INSERT INTO tb_usuarios (nombre_completo,email,password,cargo,fyh_creacion)
                                  VALUES (:nombre_completo,:email,:password,:cargo,:fyd_creacion) "); //pasador por parametros
