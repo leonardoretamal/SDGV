@@ -16,20 +16,21 @@ include("../../admin/layout/parte1.php"); ?>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
-                                    <label for="">Nombre completo</label>
-                                    <input type="text" name="nombre_completo" class="form-control">
+                                    <label for="">Nombre completo <b>*</b></label>
+                                    <input type="text" name="nombre_completo" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="">Correo electronico</label>
-                                    <input type="email" name="email" class="form-control">
+                                    <label for="">Correo electronico <b>*</b></label>
+                                    <input type="email" name="email" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Cargo</label>
-                                    <select name="cargo" id="" class="form-control">
+                                    <select name="cargo" id="" class="form-control" required>
+                                        <option value=""> Seleccione Cargo:</option>
                                         <option value="ADMINISTRADOR">ADMINISTRADOR</option>
                                         <option value="Cliente">Cliente</option>
                                         <option value="Recepcionista">Recepcionista</option>
@@ -42,13 +43,13 @@ include("../../admin/layout/parte1.php"); ?>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group"> <!-- propio de bootstrap -->
-                                    <label for="">Contraseña</label>
-                                    <input type="text" name="password" class="form-control">
+                                    <label for="">Contraseña <b>*</b></label>
+                                    <input type="text" name="password" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Verifique contraseña</label>
+                                    <label for="">Verifique contraseña <b>*</b></label>
                                     <input type="text" name="password_verify" class="form-control">
                                 </div>
                             </div>
@@ -57,7 +58,7 @@ include("../../admin/layout/parte1.php"); ?>
                         <div class="row justify-content-center"> <!-- Alineación horizontal centrada -->
                             <div class="col-md-12 text-center"> <!-- Centrado horizontal -->
                                 <a href="../../admin/usuarios/index.php" class="btn btn-secondary">Cancelar</a>
-                                <input type="submit" class="btn btn-primary" value="Registrar usuario">
+                                <input type="submit" class="btn btn-primary" value="Registrar usuario" required>
                             </div>
                         </div>
                     </form>
