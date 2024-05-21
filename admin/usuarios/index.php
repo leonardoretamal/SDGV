@@ -28,7 +28,9 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                             <?php
                             $contador = 0;
                             foreach ($usuarios as $usuario) {
-                                $contador++; ?>
+                                $contador++; 
+                                $id_usuario = $usuario['id_usuario'];
+                                ?>
                                 <tr>
                                     <td><?php echo $contador; ?></td>
                                     <td><?php echo $usuario['nombre_completo']; ?></td>
@@ -36,7 +38,7 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                                     <td><?php echo $usuario['cargo']; ?></td>
                                     <td class="d-flex justify-content-center">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</button>
+                                            <a href="show.php?id_usuario=<?php echo $id_usuario; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
                                             <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</button>
                                             <button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</button>
                                         </div>
