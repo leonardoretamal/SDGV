@@ -56,7 +56,7 @@ include("../../admin/layout/parte1.php"); ?>
                         <hr>
                         <div class="row justify-content-center"> <!-- Alineación horizontal centrada -->
                             <div class="col-md-12 text-center"> <!-- Centrado horizontal -->
-                                <a href="" class="btn btn-secondary">Cancelar</a>
+                                <a href="../../admin/usuarios/index.php" class="btn btn-secondary">Cancelar</a>
                                 <input type="submit" class="btn btn-primary" value="Registrar usuario">
                             </div>
                         </div>

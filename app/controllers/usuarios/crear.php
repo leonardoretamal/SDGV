@@ -21,7 +21,7 @@ foreach ($usuarios as $usuario) {
 if ($contador > 0) {
 
     session_start();
-    $_SESSION['mensaje'] = "este usuario ya esta registrado en la base de datos" . $email . "Correo ya registrado en la base de datos.";
+    $_SESSION['mensaje'] = "este usuario ya esta registrado en la base de datos: " . $email;
     $_SESSION['icono'] = 'error';
     header('Location: ' . $URL . '/admin/usuarios/crear.php');
 } else {

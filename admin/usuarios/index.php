@@ -14,7 +14,7 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table class="table table-responsive table-striped table-bordered table-hover">
+                    <table id="example1" class="table table-striped table-bordered table-hover mb-4">
                         <thead>
                             <tr>
                                 <th>Nro</th>
@@ -27,8 +27,8 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                         <tbody>
                             <?php
                             $contador = 0;
-                            foreach ($usuarios as $usuario) { 
-                                $contador ++;?>
+                            foreach ($usuarios as $usuario) {
+                                $contador++; ?>
                                 <tr>
                                     <td><?php echo $contador; ?></td>
                                     <td><?php echo $usuario['nombre_completo']; ?></td>
@@ -48,6 +48,7 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                             ?>
                         </tbody>
                     </table>
+
                 </div>
                 <!-- /.card-body -->
             </div>
@@ -56,7 +57,25 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
     </div>
 </div>
 
-<?php 
+<?php
 include("../../admin/layout/parte2.php");
 include("../../admin/layout/mensaje.php");
 ?>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
