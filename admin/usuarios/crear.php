@@ -50,7 +50,7 @@ include("../../admin/layout/parte1.php"); ?>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Verifique contraseña <b>*</b></label>
-                                    <input type="text" name="password_verify" class="form-control">
+                                    <input type="text" name="password_verify" class="form-control" required>
                                 </div>
                             </div>
                         </div>

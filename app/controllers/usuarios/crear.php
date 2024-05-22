@@ -55,8 +55,8 @@ if ($contador > 0) {
         }
     } else {
         session_start();
-            $_SESSION['mensaje'] = "Contraseña no son iguales";
-            $_SESSION['icono'] = 'error';
-            header('Location: ' . $URL . '/admin/usuarios/crear.php');
+        $_SESSION['mensaje'] = "Contraseña no son iguales";
+        $_SESSION['icono'] = 'error';
+        header('Location: ' . $URL . '/admin/usuarios/crear.php');
     }
 }

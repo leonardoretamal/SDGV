@@ -16,7 +16,7 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                 <div class="card-body">
                     <table id="example1" class="table table-striped table-bordered table-hover mb-4">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th>Nro</th>
                                 <th>Nombre completo</th>
                                 <th>Email</th>
@@ -31,15 +31,15 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                                 $contador++; 
                                 $id_usuario = $usuario['id_usuario'];
                                 ?>
-                                <tr>
+                                <tr class="text-center">
                                     <td><?php echo $contador; ?></td>
                                     <td><?php echo $usuario['nombre_completo']; ?></td>
                                     <td><?php echo $usuario['email']; ?></td>
                                     <td><?php echo $usuario['cargo']; ?></td>
-                                    <td class="d-flex justify-content-center">
+                                    <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="show.php?id_usuario=<?php echo $id_usuario; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
-                                            <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</button>
+                                            <a href="update.php?id_usuario=<?php echo $id_usuario; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</a>
                                             <button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</button>
                                         </div>
                                     </td>
