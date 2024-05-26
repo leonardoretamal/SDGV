@@ -40,7 +40,7 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="show.php?id_usuario=<?php echo $id_usuario; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
                                             <a href="update.php?id_usuario=<?php echo $id_usuario; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</a>
-                                            <button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</button>
+                                            <a href="delete.php?id_usuario=<?php echo $id_usuario; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
                                         </div>
                                     </td>
 

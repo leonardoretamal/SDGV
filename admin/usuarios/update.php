@@ -92,7 +92,7 @@ include('../../app/controllers/usuarios/datos_del_usuario.php');
                             </div>
                         </div>
                         <input type="text" name="id_usuario" value="<?php echo $id_usuario; ?>" hidden>
-                        <hr>
+                        <hr class="border-success">
                         <div class="row justify-content-center"> <!-- Alineación horizontal centrada -->
                             <div class="col-md-12 text-center"> <!-- Centrado horizontal -->
                                 <a href="../../admin/usuarios/index.php" class="btn btn-secondary">Cancelar</a>
