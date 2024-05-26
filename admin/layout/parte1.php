@@ -82,14 +82,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="https://i.ibb.co/LQJjPS6/PXL-2024305-163512231.jpg" class="img-circle elevation-2" alt="imagen administrador">
-                    </div>
-                    <div class="info">
-                        <a href="<?php echo $URL; ?>/admin" class="d-block">Leonardo Retamal</a>
-                    </div>
-                </div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
