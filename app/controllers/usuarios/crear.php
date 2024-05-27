@@ -1,62 +1,70 @@
 <?php
-include("../../../app/config.php"); //para tener conexion a base de datos.
-//vienen del formulario 
-$nombre_completo = $_POST["nombre_completo"];
+include("../../../app/config.php"); // Conexión a la base de datos
+
+// Obtener los datos del formulario
+$rut = $_POST["rut"];
+$nombre = $_POST["nombre"];
+$apellido_paterno = $_POST["apellido_paterno"];
+$apellido_materno = $_POST["apellido_materno"];
+$direccion = $_POST["direccion"];
+$telefono = $_POST["telefono"];
 $email = $_POST["email"];
+$rol = $_POST["rol"];
 $password = $_POST["password"];
 $password_verify = $_POST["password_verify"];
-$cargo = $_POST["cargo"];
-//siempre comprobar poniendo echo antes luego se prosigue con lo siguiente
 
-$contador = 0;
-$sql = "SELECT * FROM tb_usuarios WHERE email = '$email'";
-$query = $pdo->prepare($sql); //pdo sale de la conexion de la base de datos
+
+// Verificar si el usuario ya está registrado
+$sql = "SELECT * FROM tb_usuarios WHERE email = :email OR rut = :rut";
+$query = $pdo->prepare($sql);
+$query->bindParam(':email', $email);
+$query->bindParam(':rut', $rut);
 $query->execute();
-$usuarios = $query->fetchAll(PDO::FETCH_ASSOC); //la consulta la pasamos a un array
+$usuarios = $query->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($usuarios as $usuario) {
-    $contador++; //se suma a si mismo si es un true
-}
-//para insertar solamente si el correo no esta registrado y comprobando que haya escrito bien las contraseñas en ek formulario
-if ($contador > 0) {
-
+if (count($usuarios) > 0) {
     session_start();
-    $_SESSION['mensaje'] = "este usuario ya esta registrado en la base de datos: " . $email;
+    $_SESSION['mensaje'] = "Este usuario ya está registrado en la base de datos: " . $email;
     $_SESSION['icono'] = 'error';
     header('Location: ' . $URL . '/admin/usuarios/crear.php');
+    exit();
 } else {
-    echo "este usuario es nuevo";
-
-    //consulta que nos trae el listado de usuarios a $usuarios
     if ($password == $password_verify) {
-        //echo "son iguales";
-        $password = password_hash($password, PASSWORD_DEFAULT); //encriptamos la contraseña luego de verificarlas y luego la guardamos
+        $password_hashed = password_hash($password, PASSWORD_DEFAULT); // Encriptar la contraseña
+        $fechaHora = date('Y-m-d H:i:s'); // Fecha y hora actual
 
-        $sentencia = $pdo->prepare("INSERT INTO tb_usuarios (nombre_completo,email,password,cargo,fyh_creacion)
-                                 VALUES (:nombre_completo,:email,:password,:cargo,:fyd_creacion) "); //pasador por parametros
+        // Preparar y ejecutar la inserción en la base de datos
+        $sentencia = $pdo->prepare("INSERT INTO tb_usuarios (rut, nombre, apellido_paterno, apellido_materno, direccion, telefono, email, rol, password, fyh_creacion) 
+                                     VALUES (:rut, :nombre, :apellido_paterno, :apellido_materno, :direccion, :telefono, :email, :rol, :password, :fyh_creacion)");
+        $sentencia->bindParam(':rut', $rut);
+        $sentencia->bindParam(':nombre', $nombre);
+        $sentencia->bindParam(':apellido_paterno', $apellido_paterno);
+        $sentencia->bindParam(':apellido_materno', $apellido_materno);
+        $sentencia->bindParam(':direccion', $direccion);
+        $sentencia->bindParam(':telefono', $telefono);
+        $sentencia->bindParam(':email', $email);
+        $sentencia->bindParam(':rol', $rol);
+        $sentencia->bindParam(':password', $password_hashed);
+        $sentencia->bindParam(':fyh_creacion', $fechaHora);
 
-        $sentencia->bindParam('nombre_completo', $nombre_completo);
-        $sentencia->bindParam('email', $email);
-        $sentencia->bindParam('password', $password);
-        $sentencia->bindParam('cargo', $cargo);
-        $sentencia->bindParam('fyd_creacion', $fechaHora);
-        $resultado = $sentencia->execute(); //ejecutamos la consulta
-
-        if ($resultado) {
+        if ($sentencia->execute()) {
             session_start();
-            $_SESSION['mensaje'] = "usuario registrado correctamente";
+            $_SESSION['mensaje'] = "Usuario registrado correctamente";
             $_SESSION['icono'] = 'success';
             header('Location: ' . $URL . '/admin/usuarios');
+            exit();
         } else {
             session_start();
-            $_SESSION['mensaje'] = "usuario no se pudo registrar";
+            $_SESSION['mensaje'] = "El usuario no se pudo registrar";
             $_SESSION['icono'] = 'error';
             header('Location: ' . $URL . '/admin/usuarios/crear.php');
+            exit();
         }
     } else {
         session_start();
-        $_SESSION['mensaje'] = "Contraseña no son iguales";
+        $_SESSION['mensaje'] = "Las contraseñas no son iguales";
         $_SESSION['icono'] = 'error';
         header('Location: ' . $URL . '/admin/usuarios/crear.php');
+        exit();
     }
 }

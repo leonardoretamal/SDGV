@@ -18,9 +18,11 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                         <thead>
                             <tr class="text-center">
                                 <th>Nro</th>
-                                <th>Nombre completo</th>
+                                <th>Rut</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
                                 <th>Email</th>
-                                <th>Cargo</th>
+                                <th>Rol</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -29,13 +31,15 @@ include("../../app/controllers/usuarios/lista_de_usuarios.php");   ?>
                             $contador = 0;
                             foreach ($usuarios as $usuario) {
                                 $contador++; 
-                                $id_usuario = $usuario['id_usuario'];
+                                $id_usuario = $usuario['id'];
                                 ?>
                                 <tr class="text-center">
                                     <td><?php echo $contador; ?></td>
-                                    <td><?php echo $usuario['nombre_completo']; ?></td>
+                                    <td><?php echo $usuario['rut']; ?></td>
+                                    <td><?php echo $usuario['nombre']; ?></td>
+                                    <td><?php echo $usuario['apellido_paterno']; ?></td>
                                     <td><?php echo $usuario['email']; ?></td>
-                                    <td><?php echo $usuario['cargo']; ?></td>
+                                    <td><?php echo $usuario['rol']; ?></td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="show.php?id_usuario=<?php echo $id_usuario; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>

@@ -7,7 +7,7 @@
 <footer class="main-footer">
     <!-- To the right -->
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2024 Todos los derechos reservados.
+    <strong>Copyright &copy; 2024 Todos los derechos reservados SDGV.
 </footer>
 </div>
 <!-- ./wrapper -->

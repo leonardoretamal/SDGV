@@ -7,30 +7,63 @@ include("../../admin/layout/parte1.php"); ?>
         <div class="col-md-12">
             <div class="card card-outline card-primary">
                 <div class="card-header">
-                    <p class="h3 text-center"><b>datos del usuario </b></p>
+                    <p class="h3 text-center"><b>Datos del usuario </b></p>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <!-- se envia formulario a controlador -->
                     <form action="../../app/controllers/usuarios/crear.php" method="post"> <!-- mas seguro -->
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group"> <!-- propio de bootstrap -->
-                                    <label for="">Nombre completo <b>*</b></label>
-                                    <input type="text" name="nombre_completo" class="form-control" required>
+                                    <label for="">Rut<b>*</b></label>
+                                    <input type="text" name="rut" id="rut" class="form-control" required maxlength="10">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="">Correo electronico <b>*</b></label>
-                                    <input type="email" name="email" class="form-control" required>
+                                    <label for="">Nombres<b>*</b></label>
+                                    <input type="text" name="nombre" class="form-control" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group"> <!-- propio de bootstrap -->
-                                    <label for="">Cargo</label>
-                                    <select name="cargo" id="" class="form-control" required>
-                                        <option value=""> Seleccione Cargo:</option>
+                                    <label for="">Apellido Paterno<b>*</b></label>
+                                    <input type="text" name="apellido_paterno" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group"> <!-- propio de bootstrap -->
+                                    <label for="">Apellido Materno </label>
+                                    <input type="text" name="apellido_materno" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group"> <!-- propio de bootstrap -->
+                                    <label for="">Direccion</label>
+                                    <input type="text" name="direccion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="">Celular</label>
+                                    <input type="text" id="telefono" name="telefono" class="form-control" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group"> <!-- propio de bootstrap -->
+                                    <label for="">Correo Electronico<b>*</b></label>
+                                    <input type="text" name="email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group"> <!-- propio de bootstrap -->
+                                    <label for="">Rol<b>*</b></label>
+                                    <select name="rol" id="" class="form-control" required>
+                                        <option value=""> Seleccione el rol:</option>
                                         <option value="ADMINISTRADOR">ADMINISTRADOR</option>
                                         <option value="Cliente">Cliente</option>
                                         <option value="Recepcionista">Recepcionista</option>
@@ -70,8 +103,59 @@ include("../../admin/layout/parte1.php"); ?>
         </div>
     </div>
 </div>
-<?php 
+
+<script>
+    // Función para validar RUT chileno
+    function validarRUT(rut) {
+        // Eliminar puntos y guión y cualquier otro carácter que no sea número ni 'k'
+        rut = rut.replace(/[^0-9kK]/gi, '');
+
+        // Verificar longitud
+        if (rut.length < 8 || rut.length > 9) return false;
+
+        // Extraer cuerpo y dígito verificador
+        var cuerpo = rut.slice(0, -1);
+        var dv = rut.slice(-1).toUpperCase();
+
+        // Calcular dígito verificador
+        var suma = 0;
+        var multiplicadores = [2, 3, 4, 5, 6, 7];
+        var cuerpoReverso = cuerpo.split('').reverse().join('');
+
+        for (var i = 0; i < cuerpoReverso.length; i++) {
+            suma += parseInt(cuerpoReverso[i]) * multiplicadores[i % multiplicadores.length];
+        }
+
+        var mod = suma % 11;
+        var dvCalculado = (mod === 0) ? '0' : (mod === 1) ? 'K' : (11 - mod).toString();
+
+        // Comparar dígito verificador calculado con el ingresado
+        return dv === dvCalculado;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var rutInput = document.getElementById('rut');
+        
+        rutInput.addEventListener('input', function(event) {
+            var inputValue = event.target.value;
+            // Reemplazar cualquier carácter que no sea un número o 'k'/'K' con una cadena vacía
+            var cleanedValue = inputValue.replace(/[^0-9kK-]/gi, '');
+            // Asignar el valor limpio al campo de texto
+            rutInput.value = cleanedValue;
+        });
+
+        var formulario = document.querySelector('form');
+
+        formulario.addEventListener('submit', function(event) {
+            if (!validarRUT(rutInput.value)) {
+                event.preventDefault();
+                alert('El RUT ingresado no es válido.');
+                rutInput.focus();
+            }
+        });
+    });
+</script>
+<?php
 include("../../admin/layout/parte2.php");
 include("../../admin/layout/mensaje.php");
 ?>
-
