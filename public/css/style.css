@@ -1,3 +1,18 @@
+a{
+font-family:  Helvetica;
+}
+b{
+    font-family: Helvetica;
+}
+h1{
+    font-family: Helvetica;
+}
+h3{
+    font-family: Helvetica;
+}
+u{
+    font-family: Helvetica;
+}
 .spanAzul{
     color: blue;
 }
@@ -9,6 +24,7 @@
 
 p{
     text-align: justify;
+    font-family: Helvetica;
 }
 
 .info{
