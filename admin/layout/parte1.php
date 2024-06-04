@@ -107,6 +107,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <p>Agregar nuevo usuario</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/admin/usuarios/showinventario.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ver inventario</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -118,6 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
+                        
                     </ul>
                 </nav>
             </div>

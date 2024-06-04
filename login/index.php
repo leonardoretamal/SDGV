@@ -23,7 +23,7 @@ include("../app/config.php");
 <body class="hold-transition login-page">
   <div class="login-box ">
     <div class="login-logo">
-      <a href="<?php echo $URL; ?>/public/templeates/AdminLTE-3.2.0/index2.html"><b>INCIAR </b>SESION</a>
+     <h2 class="text-primary">INICIAR SESIÓN</h2>
     </div>
     <!-- /.login-logo -->
 
@@ -37,7 +37,7 @@ include("../app/config.php");
               <span class="visually-hidden"></span>
             </button> </a>
         </div>
-        <center><img src="<?php echo $URL; ?>/private/img/logologin.png" width="50%" alt=""></center>
+        <center><img class="border border-1" src="<?php echo $URL; ?>/private/img/logo1.png" width="50%" alt=""></center>
         <p class="login-box-msg">Ingresa tus datos</p>
 
         <form action="<?php echo $URL; ?>/app/controllers/login/controller_login.php" method="post">
@@ -51,9 +51,9 @@ include("../app/config.php");
             </div>
           </div>
 
-          <label for="">Contraseña</label>
+          <label for="password">Contraseña</label>
           <div class="input-group mb-3">
-            <input type="password" name="password" class="form-control" placeholder="Ingresa tu Contraseña..">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Ingresa tu Contraseña..">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
