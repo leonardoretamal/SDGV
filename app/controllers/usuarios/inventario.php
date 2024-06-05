@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT * FROM inventario";
+$sql = "SELECT * FROM tb_suministros";
 $query = $pdo->prepare($sql); //pdo sale de la conexion de la base de datos
 $query->execute();
 

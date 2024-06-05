@@ -2,10 +2,10 @@
 
 include ('../../../app/config.php');
 
-$id_producto = $_POST['id_producto'];
+$id = $_POST['id'];
 
 
-$sentencia = $pdo->prepare("DELETE FROM inventario WHERE id_producto = '$id_producto' ");
+$sentencia = $pdo->prepare("DELETE FROM tb_suministros WHERE id = '$id' ");
 
 if($sentencia->execute()){
     session_start();

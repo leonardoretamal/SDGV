@@ -15,6 +15,7 @@ $contador = 0;
 foreach ($usuarios as $usuario) {
   $contador = $contador + 1;
   $password_tabla = $usuario['password'];
+  $rol = $usuario['rol'];
 }
 
 $hash = $password_tabla; //contrausuario
@@ -26,5 +27,5 @@ if (($contador > 0) && (password_verify($password, $hash))) {
 } else {
   echo "error en los datos";
   header('Location: '. $URL.'/login');
-
 }
+
