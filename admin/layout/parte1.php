@@ -107,15 +107,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <p>Agregar nuevo usuario</p>
                                     </a>
                                 </li>
+                              
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link active">
+                                <i class="bi bi-bag-plus"></i>
+                                <p>
+                                    Suministros
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="<?php echo $URL; ?>/admin/usuarios/showinventario.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Ver inventario</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/admin/usuarios/agregarinventario.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ingresar Suministros</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-
                         <li class="nav-item">
                             <a href="<?php echo $URL; ?>/app/controllers/login/cerrar_sesion.php" class="nav-link active" style="background-color: red;">
                                 <i class="nav-icon fas fa-door-open"></i>

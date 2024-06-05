@@ -2,7 +2,7 @@
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
 
-$id_producto = $_GET['id_producto'];
+$id = $_GET['id'];
 include('../../app/controllers/usuarios/datos_del_inventario.php');
 
 ?>
@@ -20,20 +20,38 @@ include('../../app/controllers/usuarios/datos_del_inventario.php');
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Nombre producto: </label>
-                                <input type="text" value="<?php echo $id_producto; ?>" name="id_producto" class="form-control" disabled>
+                                <label for="">id producto: </label>
+                                <input type="number" value="<?php echo $id; ?>" name="id" class="form-control" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="">producto: </label>
-                                <input type="email" value="<?php echo $producto; ?>" name="producto" class="form-control" disabled>
+                                <label for="">descripcion: </label>
+                                <input type="text" value="<?php echo $descripcion; ?>" name="descripcion" class="form-control" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">stock</label>
-                                <input type="text" class="form-control" value="<?php echo $stock; ?>" disabled>
+                                <label for="">Nombre</label>
+                                <input type="text" class="form-cont" value="<?php echo $nombre; ?>" name="nombre" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group"> <!-- propio de bootstrap -->
+                                <label for="">Stock</label>
+                                <input type="number" class="form-cont" value="<?php echo $stock; ?>" name="stock" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group"> <!-- propio de bootstrap -->
+                                <label for="">Creacion</label>
+                                <input type="text" class="form-cont" value="<?php echo $fyh_creacion; ?>" name="fyh_creacion" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group"> <!-- propio de bootstrap -->
+                                <label for="">Actualizacion</label>
+                                <input type="text" class="form-cont" value="<?php echo $fyh_actualizacion; ?>" name="fyh_actualizacion" disabled>
                             </div>
                         </div>
                     </div>
@@ -43,7 +61,7 @@ include('../../app/controllers/usuarios/datos_del_inventario.php');
                     <div class="col-md-12 row justify-content-center">
                         <div class="form-group"> <!-- propio de bootstrap -->
                             <form action="<?php echo $URL?>/app/controllers/usuarios/deleteinventario2.php" method="post">
-                                <input type="text" value="<?php echo $id_producto; ?>" name="id_producto" hidden>
+                                <input type="text" value="<?php echo $id; ?>" name="id" hidden>
                                 <a href="index.php" class="btn btn-secondary">Cancelar</a>
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Borrar</button>
                             </form>
