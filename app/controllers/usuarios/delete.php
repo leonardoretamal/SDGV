@@ -5,7 +5,7 @@ include ('../../../app/config.php');
 $id_usuario = $_POST['id_usuario'];
 
 
-$sentencia = $pdo->prepare("DELETE FROM tb_usuarios WHERE id_usuario = '$id_usuario' ");
+$sentencia = $pdo->prepare("DELETE FROM tb_usuarios WHERE id = '$id_usuario' ");
 
 if($sentencia->execute()){
     session_start();
