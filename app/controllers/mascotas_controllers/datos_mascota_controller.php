@@ -1,6 +1,6 @@
 <?php
 
-$sql = "SELECT * FROM tb_mascota WHERE id = '$id' "; //reconoce al id porque esta importado en la pagina show.
+$sql = "SELECT * FROM tb_mascotas WHERE id = '$id' "; //reconoce al id porque esta importado en la pagina show.
 $query = $pdo->prepare($sql); //pdo sale de la conexion de la base de datos
 $query->execute();
 
