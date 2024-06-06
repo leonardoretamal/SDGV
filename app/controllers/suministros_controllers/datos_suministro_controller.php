@@ -7,10 +7,8 @@ $query->execute();
 $items = $query->fetchAll(PDO::FETCH_ASSOC); //la consulta la pasamos a un array
 
 foreach ($items as $item){
-    $id = $item['id'];
     $descripcion = $item['descripcion'];
     $nombre = $item['nombre'];
     $stock = $item['stock'];
-    $fyh_creacion = $item['fyh_creacion'];
-    $fyh_actualizacion = $item['fyh_actualizacion'];
+    $codigo = $item['codigo'];
 }

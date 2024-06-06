@@ -2,12 +2,12 @@
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
 
-
-include('../../app/controllers/suministros_controllers/datos_suministros_controller.php');
 $id = $_GET['id'];
+include('../../app/controllers/suministros_controllers/datos_suministros_controller.php');
+
 ?>
 <div class="container-fluid">
-    <h1>Datos del producto <?php echo $id; ?></h1>
+    <h1>Datos del producto <?php echo $nombre;?> <?php echo $stock;?></h1>
     <div class="row">
         <div class="col-md-12">
             <div class="card card-outline card-danger">
