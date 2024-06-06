@@ -40,6 +40,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- iconos de bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -107,12 +109,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <p>Agregar nuevo usuario</p>
                                     </a>
                                 </li>
-                              
+
                             </ul>
                         </li>
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">
-                                <i class="bi bi-bag-plus"></i>
+                                <i class="fa fa-medkit"></i>
                                 <p>
                                     Suministros
                                     <i class="right fas fa-angle-left"></i>
@@ -135,7 +137,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">
-                                <i class="bi bi-bag-plus"></i>
+                                <i class='fas fa-paw'></i>
                                 <p>
                                     Mascotas
                                     <i class="right fas fa-angle-left"></i>
@@ -156,6 +158,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link active">
+                                <i class="bi bi-heart-pulse"></i>
+                                <p>
+                                    Fichas Medicas
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/admin/fichasMedicas/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ver Fichas Medicas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/admin/fichasMedicas/crear" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ingresar Ficha Medica</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="<?php echo $URL; ?>/app/controllers/login/cerrar_sesion.php" class="nav-link active" style="background-color: red;">
                                 <i class="nav-icon fas fa-door-open"></i>
@@ -164,7 +189,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </nav>
             </div>
