@@ -2,15 +2,15 @@
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
 $id = $_GET['id'];
-include('../../app/controllers/suministros_controllers/datos_suministro_controller.php');
+include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php');
 ?>
 <div class="container-fluid">
-    <h1>Datos del producto <?php echo $id;?></h1>
+    <h1>Datos de la Mascota <?php echo $id;?></h1>
     <div class="row">
         <div class="col-md-12">
             <div class="card card-outline card-danger">
                 <div class="card-header">
-                    <p class="h3 text-center"><b>¿Estas seguro de querer eliminar este Producto?</b></p>
+                    <p class="h3 text-center"><b>¿Estas seguro de querer eliminar esta Mascota?</b></p>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -18,38 +18,38 @@ include('../../app/controllers/suministros_controllers/datos_suministro_controll
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">id producto: </label>
+                                <label for="">id mascota: </label>
                                 <input type="number" value="<?php echo $id; ?>" name="id" class="form-control" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="">descripcion: </label>
-                                <input type="text" value="<?php echo $descripcion; ?>" name="descripcion" class="form-control" disabled>
+                                <label for="">Nombre: </label>
+                                <input type="text" value="<?php echo $nombre; ?>" name="nombre" class="form-control" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Nombre</label>
-                                <input type="text" class="form-cont" value="<?php echo $nombre; ?>" name="nombre" disabled>
+                                <label for="">Tipo</label>
+                                <input type="text" class="form-cont" value="<?php echo $tipo; ?>" name="tipo" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Stock</label>
-                                <input type="number" class="form-cont" value="<?php echo $stock; ?>" name="stock" disabled>
+                                <label for="">raza</label>
+                                <input type="text" class="form-cont" value="<?php echo $raza; ?>" name="raza" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Creacion</label>
-                                <input type="text" class="form-cont" value="<?php echo $fyh_creacion; ?>" name="fyh_creacion" disabled>
+                                <label for="">edad</label>
+                                <input type="number" class="form-cont" value="<?php echo $edad; ?>" name="edad" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Actualizacion</label>
-                                <input type="text" class="form-cont" value="<?php echo $fyh_actualizacion; ?>" name="fyh_actualizacion" disabled>
+                                <label for="">Cliente id</label>
+                                <input type="number" class="form-cont" value="<?php echo $cliente_id; ?>" name="cliente_id" disabled>
                             </div>
                         </div>
                     </div>
@@ -58,9 +58,9 @@ include('../../app/controllers/suministros_controllers/datos_suministro_controll
 
                     <div class="col-md-12 row justify-content-center">
                         <div class="form-group"> <!-- propio de bootstrap -->
-                            <form action="<?php echo $URL?>/app/controllers/suministros_controllers/delete_suministro_controller.php" method="post">
+                            <form action="<?php echo $URL?>/app/controllers/mascotas_controllers/delete_mascota_controller.php" method="post">
                                 <input type="text" value="<?php echo $id; ?>" name="id" hidden>
-                                <a href="show_suministro.php" class="btn btn-secondary">Cancelar</a>
+                                <a href="show_mascota.php" class="btn btn-secondary">Cancelar</a>
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Borrar</button>
                             </form>
                         </div>
