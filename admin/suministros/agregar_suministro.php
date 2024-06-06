@@ -1,7 +1,7 @@
 <?php
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
-include("../../app/controllers/usuarios/inventario.php");   ?>
+/* include("../../app/controllers/suministros_controllers/suministros.php");  */  ?>
 <br>
 <div class="container-fluid">
     <h1>Ingresar Suministros</h1>
@@ -15,10 +15,10 @@ include("../../app/controllers/usuarios/inventario.php");   ?>
         
             <p class="login-box-msg">Ingresa Stock</p>
 
-            <form action="<?php echo $URL; ?>/app/controllers/usuarios/ingresarstock.php" method="post">
-                <label for="id">Ingresa id producto</label>
+            <form action="<?php echo $URL; ?>/app/controllers/suministros_controllers/ingresar_suministros_controller.php" method="post">
+                <label for="id">Codigo del producto <b>*</b></label>
                 <div class="input-group mb-3">
-                    <input type="number" id="id" name="id" class="form-control" placeholder="Ingresa id producto.." required>
+                    <input type="number" id="codigo" name="codigo" class="form-control" placeholder="Ingresa id producto.." required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -26,6 +26,16 @@ include("../../app/controllers/usuarios/inventario.php");   ?>
                     </div>
                 </div>
 
+                <label for="stock">Nombre <b>*</b></label>
+                <div class="input-group mb-3">
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa Nombre.." required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                
                 <label for="descripcion">Descripcion</label>
                 <div class="input-group mb-3">
                     <input type="text-area" id="descripcion" name="descripcion" class="form-control" placeholder="Ingresa Descripcion.." required>
@@ -36,17 +46,7 @@ include("../../app/controllers/usuarios/inventario.php");   ?>
                     </div>
                 </div>
 
-                <label for="stock">Nombre</label>
-                <div class="input-group mb-3">
-                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa Nombre.." required>
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <label for="stock">Stock</label>
+                <label for="stock">Stock <b>*</b></label>
                 <div class="input-group mb-3">
                     <input type="number" id="stock" name="stock" class="form-control" placeholder="Ingresa Stock.." required>
                     <div class="input-group-append">

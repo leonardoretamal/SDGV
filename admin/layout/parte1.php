@@ -120,13 +120,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?php echo $URL; ?>/admin/usuarios/showinventario.php" class="nav-link">
+                                    <a href="<?php echo $URL; ?>/admin/suministros/show_suministro.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Ver inventario</p>
+                                        <p>Ver Suministros</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo $URL; ?>/admin/usuarios/agregarinventario.php" class="nav-link">
+                                    <a href="<?php echo $URL; ?>/admin/suministros/agregar_suministro.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Ingresar Suministros</p>
                                     </a>

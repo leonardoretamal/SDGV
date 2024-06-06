@@ -2,7 +2,7 @@
 <?php
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
-include("../../app/controllers/usuarios/inventario.php");   ?>
+include("../../app/controllers/suministros_controllers/suministros.php");   ?>
 <br>
 <div class="container-fluid">
     <h1>Lista de stock</h1>
@@ -20,6 +20,7 @@ include("../../app/controllers/usuarios/inventario.php");   ?>
                             <tr class="text-center">
                                 <th>Nro</th>
                                 <th>id producto</th>
+                                <th>Codigo</th>
                                 <th>descripcion</th>
                                 <th>nombre</th>
                                 <th>stock</th>
@@ -37,6 +38,7 @@ include("../../app/controllers/usuarios/inventario.php");   ?>
                                 <tr class="text-center">
                                     <td><?php echo $contador; ?></td>
                                     <td><?php echo $item['id']; ?></td>
+                                    <td><?php echo $item['codigo']; ?></td>
                                     <td><?php echo $item['descripcion']; ?></td>
                                     <td><?php echo $item['nombre']; ?></td> 
                                     <td><?php echo $item['stock']; ?></td>
@@ -44,9 +46,8 @@ include("../../app/controllers/usuarios/inventario.php");   ?>
                                     <td><?php echo $item['fyh_actualizacion']; ?></td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="show.php?id_usuario=<?php echo $id_producto; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
-                                            <a href="update.php?id_usuario=<?php echo $id_producto; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</a>
-                                            <a href="deleteinventario.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
+                                            <a href="update.php?id=<?php echo $id_item; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</a>
+                                            <a href="delete_suministro.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
                                         </div>
                                     </td>
 

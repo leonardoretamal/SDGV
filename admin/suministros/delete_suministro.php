@@ -2,12 +2,12 @@
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
 
-$id = $_GET['id'];
-include('../../app/controllers/usuarios/datos_del_inventario.php');
 
+include('../../app/controllers/suministros_controllers/datos_suministros_controller.php');
+$id = $_GET['id'];
 ?>
 <div class="container-fluid">
-    <h1>Datos del producto <?php echo $id_producto; ?></h1>
+    <h1>Datos del producto <?php echo $id; ?></h1>
     <div class="row">
         <div class="col-md-12">
             <div class="card card-outline card-danger">
@@ -60,7 +60,7 @@ include('../../app/controllers/usuarios/datos_del_inventario.php');
 
                     <div class="col-md-12 row justify-content-center">
                         <div class="form-group"> <!-- propio de bootstrap -->
-                            <form action="<?php echo $URL?>/app/controllers/usuarios/deleteinventario2.php" method="post">
+                            <form action="<?php echo $URL?>/app/controllers/suministros_controllers/delete_suministros_controller.php" method="post">
                                 <input type="text" value="<?php echo $id; ?>" name="id" hidden>
                                 <a href="index.php" class="btn btn-secondary">Cancelar</a>
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Borrar</button>

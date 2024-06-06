@@ -11,10 +11,10 @@ if($sentencia->execute()){
     session_start();
     $_SESSION['mensaje'] = "Se elimino de la manera correcta en la base de datos";
     $_SESSION['icono'] = 'success';
-    header('Location: '.$URL.'/admin/usuarios/showinventario.php');
+    header('Location: '.$URL.'/admin/suministros/show_suministro.php');
 }else{
     session_start();
     $_SESSION['mensaje'] = "error no se pudo eliminar en la base de datos";
     $_SESSION['icono'] = 'error';
-    header('Location: '.$URL.'/admin/usuarios');
+    header('Location: '.$URL.'/admin/suministros/show_suministro.php');
 }
