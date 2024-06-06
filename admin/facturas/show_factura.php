@@ -1,16 +1,16 @@
 <?php
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
-include("../../app/controllers/mascotas_controllers/mascotas.php");   ?>
+include("../../app/controllers/facturas_controllers/facturas.php");   ?>
 <br>
 <div class="container-fluid">
-    <h1>Lista de Mascotas</h1>
+    <h1>Lista de Facturas</h1>
 
     <div class="row">
         <div class="col-md-12">
             <div class="card card-outline card-primary">
                 <div class="card-header">
-                    <h3 class="card-title"><b>Mascotas Registrados</b></h3>
+                    <h3 class="card-title"><b>Facturas Registradas</b></h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -19,11 +19,14 @@ include("../../app/controllers/mascotas_controllers/mascotas.php");   ?>
                             <tr class="text-center">
                                 <th>Nro</th>
                                 <th>id</th>
-                                <th>Nombre</th>
-                                <th>tipo</th>
-                                <th>Raza</th>
-                                <th>Edad</th>
-                                <th>Cliente_id</th>
+                                <th>fecha</th>
+                                <th>cliente_id</th>
+                                <th>total</th>
+                                <th>suministro_id</th>
+                                <th>cantidad</th>
+                                <th>valor_consulta</th>
+                                <th>operacion</th>
+                                <th>valor_operacion</th>
                                 <th>Registrado</th>
                                 <th>Actualizado</th>
                             </tr>
@@ -38,11 +41,14 @@ include("../../app/controllers/mascotas_controllers/mascotas.php");   ?>
                                 <tr class="text-center">
                                     <td><?php echo $contador; ?></td>
                                     <td><?php echo $item['id']; ?></td>
-                                    <td><?php echo $item['nombre']; ?></td>
-                                    <td><?php echo $item['tipo']; ?></td>
-                                    <td><?php echo $item['raza']; ?></td> 
-                                    <td><?php echo $item['edad']; ?></td>
+                                    <td><?php echo $item['fecha']; ?></td>
                                     <td><?php echo $item['cliente_id']; ?></td>
+                                    <td><?php echo $item['total']; ?></td> 
+                                    <td><?php echo $item['suministro_id']; ?></td>
+                                    <td><?php echo $item['cantidad']; ?></td>
+                                    <td><?php echo $item['valor_consulta']; ?></td>
+                                    <td><?php echo $item['operacion']; ?></td>
+                                    <td><?php echo $item['valor_operacion']; ?></td>
                                     <td><?php echo $item['fyh_creacion']; ?></td>
                                     <td><?php echo $item['fyh_actualizacion']; ?></td>
                                     <td>
