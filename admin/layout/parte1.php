@@ -39,6 +39,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- iconos de bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- iconos font awasome -->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.es.min.js"></script>
 
 </head>
 
@@ -88,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-users"></i>
+                                <i class="fa fa-users"></i>
                                 <p>
                                     Usuarios
                                     <i class="right fas fa-angle-left"></i>
@@ -107,12 +110,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <p>Agregar nuevo usuario</p>
                                     </a>
                                 </li>
-                              
+
                             </ul>
                         </li>
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">
-                                <i class="bi bi-bag-plus"></i>
+                                <i class="fa fa-medkit"></i>
                                 <p>
                                     Suministros
                                     <i class="right fas fa-angle-left"></i>
@@ -135,7 +138,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">
-                                <i class="bi bi-bag-plus"></i>
+                                <i class='fas fa-paw'></i>
                                 <p>
                                     Mascotas
                                     <i class="right fas fa-angle-left"></i>
@@ -158,7 +161,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">
-                                <i class="bi bi-bag-plus"></i>
+                                <i class="fa fa-edit"></i>
                                 <p>
                                     Facturas
                                     <i class="right fas fa-angle-left"></i>
@@ -187,7 +190,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </nav>
             </div>

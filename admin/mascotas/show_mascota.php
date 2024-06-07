@@ -5,12 +5,11 @@ include("../../app/controllers/mascotas_controllers/mascotas.php");   ?>
 <br>
 <div class="container-fluid">
     <h1>Lista de Mascotas</h1>
-
     <div class="row">
         <div class="col-md-12">
             <div class="card card-outline card-primary">
                 <div class="card-header">
-                    <h3 class="card-title"><b>Mascotas Registrados</b></h3>
+                    <h3 class="card-title"><b>Mascotas Registradas</b></h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -18,33 +17,28 @@ include("../../app/controllers/mascotas_controllers/mascotas.php");   ?>
                         <thead>
                             <tr class="text-center">
                                 <th>Nro</th>
-                                <th>id</th>
+                                <th>ID</th>
                                 <th>Nombre</th>
-                                <th>tipo</th>
-                                <th>Raza</th>
-                                <th>Edad</th>
-                                <th>Cliente_id</th>
-                                <th>Registrado</th>
-                                <th>Actualizado</th>
+                                <th>RUT Cliente</th>
+                                <th>Nombre Cliente</th>
+                                <th>Apellido Paterno</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             $contador = 0;
                             foreach ($items as $item) {
-                                $contador++; 
+                                $contador++;
                                 $id = $item['id'];
-                                ?>
-                                <tr class="text-center">
+                            ?>
+                                <tr class="text-start">
                                     <td><?php echo $contador; ?></td>
                                     <td><?php echo $item['id']; ?></td>
                                     <td><?php echo $item['nombre']; ?></td>
-                                    <td><?php echo $item['tipo']; ?></td>
-                                    <td><?php echo $item['raza']; ?></td> 
-                                    <td><?php echo $item['edad']; ?></td>
-                                    <td><?php echo $item['cliente_id']; ?></td>
-                                    <td><?php echo $item['fyh_creacion']; ?></td>
-                                    <td><?php echo $item['fyh_actualizacion']; ?></td>
+                                    <td><?php echo $item['rut_cliente']; ?></td>
+                                    <td><?php echo $item['nombre_cliente']; ?></td>
+                                    <td><?php echo $item['apellido_paterno_cliente']; ?></td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="showmascota.php?id=<?php echo $id; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
@@ -52,7 +46,6 @@ include("../../app/controllers/mascotas_controllers/mascotas.php");   ?>
                                             <a href="delete_mascota.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
                                         </div>
                                     </td>
-
                                 </tr>
                             <?php
                             }
@@ -98,16 +91,29 @@ include("../../admin/layout/mensaje.php");
             "responsive": true,
             "lengthChange": true,
             "autoWidth": false,
-            "buttons": [
-                {
+            "buttons": [{
                     extend: "collection",
                     text: "Reportes",
-                    buttons: [
-                        { extend: "copy", text: "Copiar" },
-                        { extend: "pdf", text: "PDF" },
-                        { extend: "csv", text: "CSV" },
-                        { extend: "excel", text: "Excel" },
-                        { extend: "print", text: "Imprimir" }
+                    buttons: [{
+                            extend: "copy",
+                            text: "Copiar"
+                        },
+                        {
+                            extend: "pdf",
+                            text: "PDF"
+                        },
+                        {
+                            extend: "csv",
+                            text: "CSV"
+                        },
+                        {
+                            extend: "excel",
+                            text: "Excel"
+                        },
+                        {
+                            extend: "print",
+                            text: "Imprimir"
+                        }
                     ]
                 },
                 {
