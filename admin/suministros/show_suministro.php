@@ -1,8 +1,8 @@
-
 <?php
-include("../../app/config.php"); //para tener conexion a base de datos.
+include("../../app/config.php"); //para tener conexión a la base de datos.
 include("../../admin/layout/parte1.php");
-include("../../app/controllers/suministros_controllers/suministros.php");   ?>
+include("../../app/controllers/suministros_controllers/suministros.php");   
+?>
 <br>
 <div class="container-fluid">
     <h1>Lista de stock</h1>
@@ -11,7 +11,7 @@ include("../../app/controllers/suministros_controllers/suministros.php");   ?>
         <div class="col-md-12">
             <div class="card card-outline card-primary">
                 <div class="card-header">
-                    <h3 class="card-title"><b>productos Registrados</b></h3>
+                    <h3 class="card-title"><b>Productos Registrados</b></h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -19,38 +19,30 @@ include("../../app/controllers/suministros_controllers/suministros.php");   ?>
                         <thead>
                             <tr class="text-center">
                                 <th>Nro</th>
-                                <th>id producto</th>
-                                <th>Codigo</th>
-                                <th>descripcion</th>
-                                <th>nombre</th>
-                                <th>stock</th>
-                                <th>Registrado</th>
-                                <th>Actualizado</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             $contador = 0;
                             foreach ($items as $item) {
-                                $contador++; 
+                                $contador++;
                                 $id = $item['id'];
-                                ?>
+                            ?>
                                 <tr class="text-center">
                                     <td><?php echo $contador; ?></td>
-                                    <td><?php echo $item['id']; ?></td>
-                                    <td><?php echo $item['codigo']; ?></td>
+                                    <td><?php echo $item['nombre']; ?></td>
                                     <td><?php echo $item['descripcion']; ?></td>
-                                    <td><?php echo $item['nombre']; ?></td> 
                                     <td><?php echo $item['stock']; ?></td>
-                                    <td><?php echo $item['fyh_creacion']; ?></td>
-                                    <td><?php echo $item['fyh_actualizacion']; ?></td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="update_suministro.php?id=<?php echo $id; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</a>
-                                            <a href="delete_mascota.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
+                                            <a href="delete_mascota.php?id=<?php echo $id; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
                                         </div>
                                     </td>
-
                                 </tr>
                             <?php
                             }
@@ -65,15 +57,17 @@ include("../../app/controllers/suministros_controllers/suministros.php");   ?>
     </div>
 </div>
 
-
 <?php
 include("../../admin/layout/parte2.php");
 include("../../admin/layout/mensaje.php");
 ?>
 <script>
-    $(function() {
-        $("#example1").DataTable({
+    $(document).ready(function() {
+        $('#example1').DataTable({
             "pageLength": 5,
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": false,
             "language": {
                 "emptyTable": "No hay información",
                 "info": "Mostrando _START_ a _END_ de _TOTAL_ productos",
@@ -93,9 +87,6 @@ include("../../admin/layout/mensaje.php");
                     "previous": "Anterior"
                 }
             },
-            "responsive": true,
-            "lengthChange": true,
-            "autoWidth": false,
             "buttons": [
                 {
                     extend: "collection",
@@ -113,6 +104,6 @@ include("../../admin/layout/mensaje.php");
                     text: "Visor de columnas"
                 }
             ]
-        }).buttons().container().appendTo("#example1_wrapper .col-md-6:eq(0)");
+        });
     });
 </script>
