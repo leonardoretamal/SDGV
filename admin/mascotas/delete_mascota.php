@@ -19,31 +19,31 @@ include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
                                 <label for="">id mascota: </label>
-                                <input type="number" value="<?php echo $id; ?>" name="id" class="form-control" disabled>
+                                <input type="number" value="<?php echo $mascota_id; ?>" name="mascota_id" class="form-control" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">Nombre: </label>
-                                <input type="text" value="<?php echo $nombre; ?>" name="nombre" class="form-control" disabled>
+                                <input type="text" value="<?php echo $mascota_nombre; ?>" name="mascota_nombre" class="form-control" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
                                 <label for="">Tipo</label>
-                                <input type="text" class="form-cont" value="<?php echo $tipo; ?>" name="tipo" disabled>
+                                <input type="text" class="form-cont" value="<?php echo $mascota_tipo; ?>" name="mascota_tipo" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
                                 <label for="">raza</label>
-                                <input type="text" class="form-cont" value="<?php echo $raza; ?>" name="raza" disabled>
+                                <input type="text" class="form-cont" value="<?php echo $mascota_raza; ?>" name="mascota_raza" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
                                 <label for="">edad</label>
-                                <input type="number" class="form-cont" value="<?php echo $edad; ?>" name="edad" disabled>
+                                <input type="number" class="form-cont" value="<?php echo $mascota_edad; ?>" name="mascota_edad" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
