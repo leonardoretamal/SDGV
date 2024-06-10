@@ -2,7 +2,7 @@
 
 include ('../../../app/config.php');
 
-$id = $_POST['id'];
+$id = $_POST['mascota_id'];
 
 
 $sentencia = $pdo->prepare("DELETE FROM tb_mascotas WHERE id = '$id' ");
