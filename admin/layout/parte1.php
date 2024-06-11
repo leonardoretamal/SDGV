@@ -241,6 +241,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         <?php endif; ?>
 
+                        <?php if (esPestanaPermitida('Facturas', $roles_permitidos, $rol_usuario)) : ?>
+                            <li class="nav-item ">
+                                <a href="#" class="nav-link active">
+                                    <i class="fa fa-edit"></i>
+                                    <p>
+                                        Ficha Medica
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="<?php echo $URL; ?>/admin/fichamedicas/show_fichamedica.php" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Ver Ficha Medica</p>
+                                        </a>
+                                    </li>
+                                    <?php if (esIngresoPermitido('Facturas', $ingresos_permitidos, $rol_usuario)) : ?>
+                                        <li class="nav-item">
+                                            <a href="<?php echo $URL; ?>/admin/fichamedicas/agregar_fichamedica.php" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Ingresar Ficha Medica</p>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </li>
+                        <?php endif; ?>
+
+
                         <li class="nav-item">
                             <a href="<?php echo $URL; ?>/app/controllers/login/cerrar_sesion.php" class="nav-link active" style="background-color: red;">
                                 <i class="nav-icon fas fa-door-open"></i>

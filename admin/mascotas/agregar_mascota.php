@@ -34,22 +34,51 @@ include("../../admin/layout/parte1.php"); ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">edad</label>
-                                    <input type="int" name="edad" id="edad"class="form-control">
+                                    <input type="number" name="edad" id="edad"class="form-control">
                                 </div>
                             </div>
-                            <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">ID Cliente</label>
-                                    <input type="int" name="cliente_id" id="cliente_id"class="form-control">
+                                    <input type="number" name="cliente_id" id="cliente_id"class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group"> <!-- propio de bootstrap -->
+                                    <label for="">Sexo</label>
+                                    <input type="text" name="sexo" id="sexo"class="form-control">
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group"> <!-- propio de bootstrap -->
+                                    <label for="">Color</label>
+                                    <input type="text" name="color" id="color"class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group"> <!-- propio de bootstrap -->
+                                    <label for="">Peso</label>
+                                    <input type="number" name="peso" id="peso"class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group"> <!-- propio de bootstrap -->
+                                    <label for="">Altura</label>
+                                    <input type="number" name="altura" id="altura"class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group"> <!-- propio de bootstrap -->
+                                    <label for="">Fecha Nacimiento</label>
+                                    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento"class="form-control">
+                                </div>
+                            </div>
                         </div>
-                      
                         <hr>
                         <div class="row justify-content-center"> <!-- Alineación horizontal centrada -->
                             <div class="col-md-12 text-center"> <!-- Centrado horizontal -->
