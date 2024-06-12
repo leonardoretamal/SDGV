@@ -44,8 +44,8 @@ include("../../admin/layout/parte1.php"); ?>
                         <hr>
                         <div class="row justify-content-center"> <!-- Alineación horizontal centrada -->
                             <div class="col-md-12 text-center"> <!-- Centrado horizontal -->
-                                <a href="../../admin/fichamedicas/show_fichamedica.php" class="btn btn-secondary">Cancelar</a>
-                                <input type="submit" class="btn btn-primary" value="Registrar suministro" required>
+                                <a href="../../admin/fichamedicas/showfichamedica.php" class="btn btn-secondary">Cancelar</a>
+                                <input type="submit" class="btn btn-primary" value="Registrar Ficha Medica" required>
                             </div>
                         </div>
                     </form>

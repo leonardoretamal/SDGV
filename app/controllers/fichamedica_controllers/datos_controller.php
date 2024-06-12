@@ -1,7 +1,7 @@
 <?php
 
 
-$sql = "SELECT * FROM tb_fichamedica where id = '$id' ";
+$sql = "SELECT * FROM tb_fichamedica";
 $query = $pdo->prepare($sql); //pdo sale de la conexion de la base de datos
 $query->execute();
 

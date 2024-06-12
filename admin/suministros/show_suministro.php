@@ -58,7 +58,7 @@ include("../../app/controllers/suministros_controllers/suministros.php");
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <?php if ($_SESSION['rol'] == 'ADMINISTRADOR') : ?>
-                                                <a href="mostrar_suministro.php?id=<?php echo $id; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i>Mostrar</a>
+                                                <a href="mostrar_suministro.php?id=<?php echo $id; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i>Ver</a>
                                                 <a href="update_suministro.php?id=<?php echo $id; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i>Editar</a>
                                                 <a href="delete_suministro.php?id=<?php echo $id; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i>Eliminar</a>
                                             <?php endif; ?>

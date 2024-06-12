@@ -2,7 +2,7 @@
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
 $id = $_GET['id'];
-include('../../app/controllers/fichamedica_controllers/datos_controller.php');
+include('../../app/controllers/fichamedica_controllers/datos_fichamedica_controller.php');
 ?>
 <div class="container-fluid">
     <h1>Datos de la Ficha Medica <?php echo $id;?></h1>
@@ -43,7 +43,7 @@ include('../../app/controllers/fichamedica_controllers/datos_controller.php');
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
                                 <label for="">Fecha</label>
-                                <input type="date" class="form-cont" value="<?php echo $fecha; ?>" name="fecha" disabled>
+                                <input type="text" class="form-cont" value="<?php echo $fecha; ?>" name="fecha" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -55,7 +55,7 @@ include('../../app/controllers/fichamedica_controllers/datos_controller.php');
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
                                 <label for="">Emitida</label>
-                                <input type="date" class="form-cont" value="<?php echo $fyf_creacion; ?>" name="fyf_creacion" disabled>
+                                <input type="text" class="form-cont" value="<?php echo $fyf_creacion; ?>" name="fyf_creacion" disabled>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ include('../../app/controllers/fichamedica_controllers/datos_controller.php');
                         <div class="form-group"> <!-- propio de bootstrap -->
                             <form action="<?php echo $URL?>/app/controllers/fichamedica_controllers/delete_fichamedica_controller.php" method="post">
                                 <input type="text" value="<?php echo $id; ?>" name="id" hidden>
-                                <a href="show_fichamedica.php" class="btn btn-secondary">Cancelar</a>
+                                <a href="showfichamedica.php" class="btn btn-secondary">Cancelar</a>
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Borrar</button>
                             </form>
                         </div>
