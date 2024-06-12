@@ -1,8 +1,25 @@
 <?php
 include("../../app/config.php"); //para tener conexion a base de datos.
-include("../../admin/layout/parte1.php"); ?>
+include("../../admin/layout/parte1.php");
+
+// Verificar si el usuario tiene un rol permitido para acceder a esta página
+$roles_permitidos = array(
+    'ADMINISTRADOR',
+    'Recepcionista',
+    'Veterinario'
+);
+
+// Verifica si el rol del usuario está permitido
+if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) {
+    // Si el rol del usuario no está permitido, cierra la sesión y redirige al login
+    session_unset(); // Elimina todas las variables de sesión
+    session_destroy(); // Destruye la sesión
+    header('Location: '.$URL.'/login'); // Redirige al login
+    exit; // Detiene la ejecución del script
+}
+?>
 <div class="container-fluid">
-    <h1>Creacion de nuevo Suministro</h1>
+    <h1>Ingrese nuevo Suministro</h1>
     <div class="row">
         <div class="col-md-12">
             <div class="card card-outline card-primary">
