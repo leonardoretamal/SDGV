@@ -4,7 +4,6 @@ include ('../../../app/config.php');
 
 $id = $_POST['id'];
 
-
 $sentencia = $pdo->prepare("DELETE FROM tb_suministros WHERE id = '$id' ");
 
 if($sentencia->execute()){

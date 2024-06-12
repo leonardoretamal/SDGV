@@ -1,7 +1,23 @@
 <?php
 include("../../app/config.php"); //para tener conexión a la base de datos.
 include("../../admin/layout/parte1.php");
-include("../../app/controllers/suministros_controllers/suministros.php");   
+// Verificar si el usuario tiene un rol permitido para acceder a esta página
+$roles_permitidos = array(
+    'ADMINISTRADOR',
+    'Recepcionista',
+    'Veterinario'
+);
+
+// Verifica si el rol del usuario está permitido
+if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) {
+    // Si el rol del usuario no está permitido, cierra la sesión y redirige al login
+    session_unset(); // Elimina todas las variables de sesión
+    session_destroy(); // Destruye la sesión
+    header('Location: ' . $URL . '/login'); // Redirige al login
+    exit; // Detiene la ejecución del script
+}
+
+include("../../app/controllers/suministros_controllers/suministros.php");
 ?>
 <br>
 <div class="container-fluid">
@@ -22,7 +38,9 @@ include("../../app/controllers/suministros_controllers/suministros.php");
                                 <th>Nombre</th>
                                 <th>Descripción</th>
                                 <th>Stock</th>
-                                <th>Acciones</th>
+                                <?php if ($_SESSION['rol'] == 'ADMINISTRADOR') : ?>
+                                    <th>Acciones</th>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,8 +57,11 @@ include("../../app/controllers/suministros_controllers/suministros.php");
                                     <td><?php echo $item['stock']; ?></td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="update_suministro.php?id=<?php echo $id; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</a>
-                                            <a href="delete_mascota.php?id=<?php echo $id; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
+                                            <?php if ($_SESSION['rol'] == 'ADMINISTRADOR') : ?>
+                                                <a href="mostrar_suministro.php?id=<?php echo $id; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i>Mostrar</a>
+                                                <a href="update_suministro.php?id=<?php echo $id; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i>Editar</a>
+                                                <a href="delete_suministro.php?id=<?php echo $id; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i>Eliminar</a>
+                                            <?php endif; ?>
                                         </div>
                                     </td>
                                 </tr>
@@ -87,16 +108,29 @@ include("../../admin/layout/mensaje.php");
                     "previous": "Anterior"
                 }
             },
-            "buttons": [
-                {
+            "buttons": [{
                     extend: "collection",
                     text: "Reportes",
-                    buttons: [
-                        { extend: "copy", text: "Copiar" },
-                        { extend: "pdf", text: "PDF" },
-                        { extend: "csv", text: "CSV" },
-                        { extend: "excel", text: "Excel" },
-                        { extend: "print", text: "Imprimir" }
+                    buttons: [{
+                            extend: "copy",
+                            text: "Copiar"
+                        },
+                        {
+                            extend: "pdf",
+                            text: "PDF"
+                        },
+                        {
+                            extend: "csv",
+                            text: "CSV"
+                        },
+                        {
+                            extend: "excel",
+                            text: "Excel"
+                        },
+                        {
+                            extend: "print",
+                            text: "Imprimir"
+                        }
                     ]
                 },
                 {

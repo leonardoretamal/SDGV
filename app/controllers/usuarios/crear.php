@@ -24,7 +24,7 @@ $usuarios = $query->fetchAll(PDO::FETCH_ASSOC);
 
 if (count($usuarios) > 0) {
     session_start();
-    $_SESSION['mensaje'] = "Este usuario ya está registrado en la base de datos: " . $email;
+    $_SESSION['mensaje'] = "Este usuario ya está registrado en la base de datos: ".$email;
     $_SESSION['icono'] = 'error';
     header('Location: ' . $URL . '/admin/usuarios/crear.php');
     exit();
@@ -51,20 +51,20 @@ if (count($usuarios) > 0) {
             session_start();
             $_SESSION['mensaje'] = "Usuario registrado correctamente";
             $_SESSION['icono'] = 'success';
-            header('Location: ' . $URL . '/admin/usuarios');
+            header('Location: '.$URL.'/admin/usuarios');
             exit();
         } else {
             session_start();
             $_SESSION['mensaje'] = "El usuario no se pudo registrar";
             $_SESSION['icono'] = 'error';
-            header('Location: ' . $URL . '/admin/usuarios/crear.php');
+            header('Location: '.$URL.'/admin/usuarios/crear.php');
             exit();
         }
     } else {
         session_start();
         $_SESSION['mensaje'] = "Las contraseñas no son iguales";
         $_SESSION['icono'] = 'error';
-        header('Location: ' . $URL . '/admin/usuarios/crear.php');
+        header('Location: '.$URL.'/admin/usuarios/crear.php');
         exit();
     }
 }

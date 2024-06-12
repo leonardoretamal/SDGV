@@ -9,7 +9,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== $rol_permitido) {
    // Si el rol del usuario no está permitido, cierra la sesión y redirige al login
    session_unset(); // Elimina todas las variables de sesión
    session_destroy(); // Destruye la sesión
-   header('Location: ' . $URL . '/login'); // Redirige al login
+   header('Location: '.$URL.'/login'); // Redirige al login
    exit; // Detiene la ejecución del script
 }
 
