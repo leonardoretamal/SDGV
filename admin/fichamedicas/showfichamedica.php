@@ -1,8 +1,8 @@
 <?php
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
-$id = $_POST['mascota_id'];
-include("../../app/controllers/fichamedica_controllers/datos_fichamedica_controller.php");   
+
+include("../../app/controllers/fichamedica_controllers/datos_controller.php");   
 ?>
 <br>
 <div class="container-fluid">
@@ -47,7 +47,7 @@ include("../../app/controllers/fichamedica_controllers/datos_fichamedica_control
                                     <td><?php echo $item['fyf_creacion']; ?></td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="showmascota.php?id=<?php echo $id; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
+                                            <a href="show_fichamedica.php?id=<?php echo $id; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
                                             <a href="update_suministro.php?id=<?php echo $id; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</a>
                                             <a href="delete_fichamedica.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
                                         </div>

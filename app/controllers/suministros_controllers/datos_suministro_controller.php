@@ -11,4 +11,7 @@ foreach ($items as $item){
     $nombre = $item['nombre'];
     $stock = $item['stock'];
     $codigo = $item['codigo'];
+    $fyh_creacion = $item['fyh_creacion'];
+    $fyh_actualizacion = $item['fyh_actualizacion'];
+
 }

@@ -43,7 +43,7 @@ if (count($items) > 0) {
             session_start();
             $_SESSION['mensaje'] = "Ficha Medica registrado correctamente";
             $_SESSION['icono'] = 'success';
-            header('Location: ' . $URL . '/admin/fichamedicas/agregar_fichamedica.php');
+            header('Location: ' . $URL . '/admin/fichamedicas/showfichamedica.php');
             exit();
         } else {
             session_start();
