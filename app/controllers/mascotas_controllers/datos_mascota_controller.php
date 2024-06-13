@@ -1,9 +1,7 @@
 <?php
 
-$sql = "SELECT tb_mascotas.*, tb_usuarios.* 
-        FROM tb_mascotas
-        INNER JOIN tb_usuarios ON tb_mascotas.cliente_id = tb_usuarios.id
-        WHERE tb_mascotas.id = :id";
+$sql = "SELECT * FROM tb_mascotas WHERE id = :id";
+        
 
 $query = $pdo->prepare($sql);
 $query->bindParam(':id', $id, PDO::PARAM_INT);
@@ -25,16 +23,32 @@ foreach ($items as $item) {
     $mascota_fyh_creacion = $item['fyh_creacion'];
     $mascota_fyh_actualizacion = $item['fyh_actualizacion'];
     
-    $cliente_id = $item['id']; // ID del cliente
-    $cliente_rut = $item['rut'];
-    $cliente_nombre = $item['nombre'];
-    $cliente_apellido_paterno = $item['apellido_paterno'];
-    $cliente_apellido_materno = $item['apellido_materno'];
-    $cliente_direccion = $item['direccion'];
-    $cliente_telefono = $item['telefono'];
-    $cliente_email = $item['email'];
-    $cliente_rol = $item['rol'];
-    
+}
+
+
+$sql2 = "SELECT tb_mascotas.*, tb_usuarios.* 
+        FROM tb_mascotas
+        INNER JOIN tb_usuarios ON tb_mascotas.cliente_id = tb_usuarios.id
+        WHERE tb_mascotas.id = :id";
+
+$query2 = $pdo->prepare($sql2);
+$query2->bindParam(':id', $id, PDO::PARAM_INT);
+$query2->execute();
+
+$items2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+foreach ($items2 as $i) {
+
+    $cliente_id = $i['id'];
+    $cliente_rut = $i['rut'];
+    $cliente_nombre = $i['nombre'];
+    $cliente_apellido_paterno = $i['apellido_paterno'];
+    $cliente_apellido_materno = $i['apellido_materno'];
+    $cliente_direccion = $i['direccion'];
+    $cliente_telefono = $i['telefono'];
+    $cliente_email = $i['email'];
+    $cliente_rol = $i['rol'];
+    $cliente_fyh_creacion = $i['fyh_creacion'];
+    $cliente_fyh_actualizacion = $i['fyh_actualizacion'];
 }
 
 // Ahora puedes usar las variables $mascota_id, $mascota_nombre, $mascota_tipo, $mascota_raza, $mascota_edad, $mascota_sexo, $mascota_color, $mascota_peso, $mascota_altura, $mascota_fecha_nacimiento, 
