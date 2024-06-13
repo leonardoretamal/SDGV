@@ -19,7 +19,7 @@ include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
                                 <label for="">id mascota: </label>
-                                <input type="number" value="<?php echo $id; ?>" name="id" class="form-control" disabled>
+                                <input type="number" value="<?php echo $mascota_id; ?>" name="mascota_id" class="form-control" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -59,7 +59,7 @@ include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php
                     <div class="col-md-12 row justify-content-center">
                         <div class="form-group"> <!-- propio de bootstrap -->
                             <form action="<?php echo $URL?>/app/controllers/mascotas_controllers/delete_mascota_controller.php" method="post">
-                                <input type="text" value="<?php echo $id; ?>" name="id" hidden>
+                                <input type="number" value="<?php echo $mascota_id; ?>" name="mascota_id" hidden>
                                 <a href="show_mascota.php" class="btn btn-secondary">Cancelar</a>
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Borrar</button>
                             </form>

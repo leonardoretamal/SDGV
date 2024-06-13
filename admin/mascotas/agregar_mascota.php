@@ -83,7 +83,7 @@ include("../../admin/layout/parte1.php"); ?>
                         <div class="row justify-content-center"> <!-- Alineación horizontal centrada -->
                             <div class="col-md-12 text-center"> <!-- Centrado horizontal -->
                                 <a href="../../admin/mascotas/show_mascota.php" class="btn btn-secondary">Cancelar</a>
-                                <input type="submit" class="btn btn-primary" value="Registrar suministro" required>
+                                <input type="submit" class="btn btn-primary" value="Registrar Mascota" required>
                             </div>
                         </div>
                     </form>
