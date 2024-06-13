@@ -11,7 +11,7 @@ if (isset($_SESSION["sesion email"])) {
 // Obtén el rol del usuario de la variable de sesión
 $rol_usuario = isset($_SESSION['rol']) ? $_SESSION['rol'] : 'No se encontraron datos';
 $nombre = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : 'No se encontraron datos';
-$apellido_paterno=isset($_SESSION['apellido_paterno']) ? $_SESSION['apellido_paterno'] : 'No se encontraron datos';
+$apellido_paterno = isset($_SESSION['apellido_paterno']) ? $_SESSION['apellido_paterno'] : 'No se encontraron datos';
 
 // Verifica el rol del usuario y define las restricciones de visualización de las pestañas
 $roles_permitidos = array(
@@ -77,11 +77,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo $URL; ?>/public/templeates/AdminLTE-3.2.0/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo $URL; ?>/public/templeates/AdminLTE-3.2.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <!-- iconos de bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- iconos font awasome -->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.es.min.js"></script>
+    <!-- fullcalendar -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+
 
 </head>
 
@@ -241,33 +246,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         <?php endif; ?>
 
-                        <?php if (esPestanaPermitida('Facturas', $roles_permitidos, $rol_usuario)) : ?>
-                            <li class="nav-item ">
-                                <a href="#" class="nav-link active">
-                                    <i class="fa fa-edit"></i>
-                                    <p>
-                                        Ficha Medica
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?php echo $URL; ?>/admin/fichamedicas/showfichamedica.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Ver Ficha Medica</p>
-                                        </a>
-                                    </li>
-                                    <?php if (esIngresoPermitido('Facturas', $ingresos_permitidos, $rol_usuario)) : ?>
-                                        <li class="nav-item">
-                                            <a href="<?php echo $URL; ?>/admin/fichamedicas/agregar_fichamedica.php" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Ingresar Ficha Medica</p>
-                                            </a>
-                                        </li>
-                                    <?php endif; ?>
-                                </ul>
-                            </li>
-                        <?php endif; ?>
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link active">
+                                <i class="fa fa-edit"></i>
+                                <p>
+                                    Ficha Medica
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/admin/fichamedicas/showfichamedica.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ver Ficha Medica</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/admin/fichamedicas/agregar_fichamedica.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ingresar Ficha Medica</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link active">
+                                <i class="fa fa-edit"></i>
+                                <p>
+                                    Citas
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/admin/citas/index.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ver citas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ingresar Ficha Medica</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
 
                         <li class="nav-item">
