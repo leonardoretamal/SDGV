@@ -2,7 +2,7 @@
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
 
-include("../../app/controllers/fichamedica_controllers/datos_controller.php");   
+include("../../app/controllers/fichamedica_controllers/datos_fichamedica_controller.php");   
 ?>
 <br>
 <div class="container-fluid">
@@ -21,12 +21,13 @@ include("../../app/controllers/fichamedica_controllers/datos_controller.php");
                                 <th>Nro</th>
                                 <th>ID</th>
                                 <th>Mascota ID</th>
+                                <th>Nombre Mascota</th>
+                                <th>Tipo Mascota</th>
                                 <th>Diagnostico</th>
                                 <th>tratamiento</th>
-                                <th>Fecha</th>
+                                
                                 <th>Especialista ID</th>
                                 <th>Emitida</th>
-                               
                             </tr>
                         </thead>
                         <tbody>
@@ -40,15 +41,15 @@ include("../../app/controllers/fichamedica_controllers/datos_controller.php");
                                     <td><?php echo $contador; ?></td>
                                     <td><?php echo $item['id']; ?></td>
                                     <td><?php echo $item['mascota_id']; ?></td>
+                                    <td><?php echo $item['nombre_mascota']; ?></td>
+                                    <td><?php echo $item['tipo_mascota']; ?></td>
                                     <td><?php echo $item['diagnostico']; ?></td>
                                     <td><?php echo $item['tratamiento']; ?></td>
-                                    <td><?php echo $item['fecha']; ?></td>
                                     <td><?php echo $item['especialista_id']; ?></td>
                                     <td><?php echo $item['fyf_creacion']; ?></td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="show_fichamedica.php?id=<?php echo $id; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
-                                            <a href="update_suministro.php?id=<?php echo $id; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</a>
                                             <a href="delete_fichamedica.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
                                         </div>
                                     </td>

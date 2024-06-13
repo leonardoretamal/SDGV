@@ -1,7 +1,12 @@
 <?php
 
 
-$sql = "SELECT * FROM tb_fichamedica where id = '$id' ";
+$sql = "SELECT tb_fichamedica.*, 
+               tb_mascotas.nombre AS nombre_mascota,
+               tb_mascotas.tipo AS tipo_mascota
+        FROM tb_fichamedica
+        inner join tb_mascotas on tb_fichamedica.mascota_id = tb_mascotas.id";
+        
 $query = $pdo->prepare($sql); //pdo sale de la conexion de la base de datos
 $query->execute();
 
@@ -16,4 +21,7 @@ foreach ($items as $item) {
     $fecha = $item['fecha'];
     $especialista_id = $item['especialista_id'];
     $fyf_creacion = $item['fyf_creacion'];
+
+    $mascota_nombre = $item['nombre_mascota'];
+    $mascota_tipo = $item['tipo_mascota'];
 }

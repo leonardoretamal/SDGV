@@ -12,7 +12,7 @@ $query->execute();
 $items = $query->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($items as $item) {
-    $mascota_id = $item['id'];
+    $mascota_id = $id;
     $mascota_nombre = $item['nombre'];
     $mascota_tipo = $item['tipo'];
     $mascota_raza = $item['raza'];
