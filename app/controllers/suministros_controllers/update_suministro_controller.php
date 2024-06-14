@@ -17,6 +17,7 @@ SET codigo=:codigo,
     descripcion=:descripcion,
     fyh_actualizacion=:fyh_actualizacion
     WHERE id = :id");
+$fyh_actualizacion = date('Y-m-d H:i:s');
 $query->bindParam('id', $id);
 $query->bindParam('codigo', $codigo);
 $query->bindParam('nombre', $nombre);
