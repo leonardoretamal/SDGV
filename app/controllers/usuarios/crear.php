@@ -35,7 +35,7 @@ if (count($usuarios) > 0) {
 
         // Preparar y ejecutar la inserción en la base de datos
         $sentencia = $pdo->prepare("INSERT INTO tb_usuarios (rut, nombre, apellido_paterno, apellido_materno, direccion, telefono, email, rol, password, fyh_creacion) 
-                                     VALUES (:rut, :nombre, :apellido_paterno, :apellido_materno, :direccion, :telefono, :email, :rol, :password, :fyh_creacion)");
+                                    VALUES (:rut, :nombre, :apellido_paterno, :apellido_materno, :direccion, :telefono, :email, :rol, :password, :fyh_creacion)");
         $sentencia->bindParam(':rut', $rut);
         $sentencia->bindParam(':nombre', $nombre);
         $sentencia->bindParam(':apellido_paterno', $apellido_paterno);

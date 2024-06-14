@@ -1,4 +1,9 @@
-<!doctype html>
+<?php 
+    include("app/controllers/reCaptcha/keys.php");
+    //Esto trae el arreglo donde tenemos almacenadas las contraseñas
+?>
+
+<!doctype html
 <html lang="es">
 
 <head>
@@ -9,9 +14,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/_variables.scss">
+    <link rel="stylesheet" href="public/css/diable.css">
     <!-- iconos de boostrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $claves['publica']; ?>"></script>
     <!-- JQUERY -->
     <script src="public/js/jquery-3.7.1.min.js"></script>
 </head>
@@ -427,23 +433,30 @@
                             <center><b>Escribenos aqui</b></center>
                         </div>
                         <div class="card-body">
-                            <form class="" action="" method="post">
+                            <form class="" action="app/controllers/reCaptcha/verificado.php" method="post">
+                                <?php 
+                                    if (isset($_GET['error'])) {
+                                        $error = $_GET['error'];
+                                        echo "<p class='error_captcha'>$error</p>";
+                                    }
+                                ?>
                                 <div class="form-group">
                                     <label for=""><b>Nombre</b></label>
-                                    <input type="text" placeholder="Escribe tu nombre..." class="form-control">
+                                    <input type="text" name="nombre" placeholder="Escribe tu nombre..." class="form-control">
                                     <br>
                                 </div>
                                 <div class="form-group">
                                     <label for=""><b>Correo</b></label>
-                                    <input type="text" placeholder="Escribe tu correo..." class="form-control">
+                                    <input type="text" name="correo" placeholder="Escribe tu correo..." class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for=""><b>Mensaje</b></label>
-                                    <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                    <textarea name="mensaje" id="" cols="30" rows="5" class="form-control"></textarea>
                                 </div>
                                 <hr>
+                                <input type="hidden" id="token" name="token">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-outline-primary" type="submit">Enviar</button>
+                                    <button id="btn" class="btn btn-outline-primary" type="submit" disabled>Enviar</button>
                                 </div>
                             </form>
                         </div>
@@ -486,6 +499,27 @@
     <div class="container-fluid" style="background-color:black ; color: white;">
         <p style="text-align: center;">Todos los derechos reservados © 2024 SDGV.</p>
     </div>
+
+
+    <!-- ReCaptcha -->
+
+    <!-- <script src="public/js/reCAPTCHA.js"></script> -->
+
+    <script>
+        grecaptcha.ready(() => {
+            grecaptcha.execute('<?php echo $claves['publica']; ?>', 
+            {action: 'formulario'}
+            ).then( ( token ) => {
+                const idToken = document.getElementById('token');
+                const btn_disable = document.getElementById('btn');
+
+                idToken.value = token;
+
+                btn_disable.disabled = false;
+            })
+        })
+    </script>
+
     <script type="text/javascript">
         var nav = document.querySelector('nav');
   
