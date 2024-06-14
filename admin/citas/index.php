@@ -20,12 +20,12 @@ include("../../admin/layout/parte1.php");
                 var a = info.dateStr;
                 const fechaComoCadena = a;
                 var numeroDia = new Date(fechaComoCadena).getDay();
-                var dias = ['LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO',]
+                var dias = ['LUNES', 'MARTES', 'MIERCOLES', 'JUEVES', 'VIERNES', 'SABADO', ]
 
 
                 if (numeroDia == "6") {
                     alert("No hay atencion disponible este dia.");
-                }else{
+                } else {
                     $('#modal_reservas').modal("show");
                     $('#dia_de_la_semana').html(dias[numeroDia] + " " + a);
                 }
@@ -40,6 +40,7 @@ include("../../admin/layout/parte1.php");
         calendar.render();
     });
 </script>
+
 <br>
 <div class="container-fluid">
     <div class="row">
@@ -64,11 +65,24 @@ include("../../admin/layout/parte1.php");
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-md-6">
-                                    <div class="">
+                                        <p class="text-center fw-bold fs-5">Horas en la mañana</p>
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-info" type="button" data-bs-dismiss="modal" id="btn_h1">08:00 - 09:00 am</button>
+                                            <button class="btn btn-info" type="button" data-bs-dismiss="modal" id="btn_h2">09:00 - 10:00 am</button>
+                                            <button class="btn btn-info" type="button" data-bs-dismiss="modal" id="btn_h3">10:00 - 11:00 am</button>
+                                            <button class="btn btn-info" type="button" data-bs-dismiss="modal" id="btn_h4">11:00 - 12:00 am</button>
+                                        </div>
+                                    </div>
 
+                                    <div class="col-md-6">
+                                        <p class="text-center fw-bold fs-5">Horas en la tarde</p>
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-info" type="button" data-bs-dismiss="modal" id="btn_h5">12:00 - 13:00 pm</button>
+                                            <button class="btn btn-info" type="button" data-bs-dismiss="modal" id="btn_h6">13:00 - 14:00 pm</button>
+                                            <button class="btn btn-info" type="button" data-bs-dismiss="modal" id="btn_h7">14:00 - 15:00 pm</button>
+                                            <button class="btn btn-info" type="button" data-bs-dismiss="modal" id="btn_h8">16:00 - 17:00 pm</button>
+                                        </div>
                                     </div>
-                                    </div>
-                                    <div class="col-md-6">sklkaasñk</div>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -78,6 +92,67 @@ include("../../admin/layout/parte1.php");
                         </div>
                     </div>
                 </div>
+
+                <script>
+                    $('#btn_h1').click(function() {
+                        $('#modal_formulario').modal("show");
+                    });
+                </script>
+
+
+
+
+
+                <!-- Modal 2 -->
+                <div class="modal fade" id="modal_formulario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu cita para el dia <span id="dia_de_la_semana"></span></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="">Nombre de la mascota</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">Fecha</label>
+                                                <input type="text" class="form-control" placeholder="Introdusca el servicio">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="row">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="">Fecha</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">Tipo de servicio</label>
+                                                <input type="text" class="form-control" placeholder="Introdusca el servicio">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
     </div>
