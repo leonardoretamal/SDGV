@@ -36,14 +36,14 @@ include('../../app/controllers/suministros_controllers/datos_suministro_controll
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Codigo del producto<b>*</b></label>
-                                    <input type="number" name="codigo" value="<?php echo $codigo; ?>" class="form-control" required maxlength="10" disabled>
+                                    <input type="number" name="codigo" value="<?php echo $codigo; ?>" class="form-control" required maxlength="10" >
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Nombre<b>*</b></label>
-                                    <input type="text" name="nombre" value="<?php echo $nombre; ?>" class="form-control" required maxlength="50" disabled>
+                                    <input type="text" name="nombre" value="<?php echo $nombre; ?>" class="form-control" required maxlength="50" >
                                 </div>
                             </div>
                             <div class="col-md-4">

@@ -31,25 +31,26 @@ include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php
                 <div class="card-body">
                     <!-- se envia formulario a controlador -->
                     <form action="<?php echo $URL; ?>/app/controllers/mascotas_controllers/update_mascota_controller.php" method="post">
+                        
                         <div class="row">
         
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">ID Mascota<b>*</b></label>
-                                    <input type="int" name="mascota_id" value="<?php echo $mascota_id; ?>" class="form-control" required maxlength="10" disabled>
+                                    <input type="number" name="mascota_id" value="<?php echo $mascota_id; ?>" class="form-control" required maxlength="10" >
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Nombre<b>*</b></label>
-                                    <input type="text" name="mascota_nombre" value="<?php echo $mascota_nombre; ?>" class="form-control" required maxlength="50" disabled>
+                                    <input type="text" name="mascota_nombre" value="<?php echo $mascota_nombre; ?>" class="form-control" required maxlength="50"  >
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Tipo<b>*</b></label>
-                                    <input type="text" name="mascota_tipo" value="<?php echo $mascota_tipo; ?>" class="form-control" required maxlength="10" disabled>
+                                    <input type="text" name="mascota_tipo" value="<?php echo $mascota_tipo; ?>" class="form-control" required maxlength="10" >
                                 </div>
                             </div>
                         </div>
@@ -58,19 +59,19 @@ include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Edad</label>
-                                    <input type="int" name="mascota_edad" value="<?php echo $mascota_edad; ?>" class="form-control">
+                                    <input type="number" name="mascota_edad" value="<?php echo $mascota_edad; ?>" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">ID Cliente</label>
-                                    <input type="int" name="cliente_id" value="<?php echo $cliente_id; ?>" class="form-control">
+                                    <input type="number" name="cliente_id" value="<?php echo $cliente_id; ?>" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Sexo</label>
-                                    <input type="text" name="mascota_sexo" value="<?php echo $mascota_sexo; ?>" class="form-control" disabled>
+                                    <input type="text" name="mascota_sexo" value="<?php echo $mascota_sexo; ?>" class="form-control" >
                                 </div>
                             </div>
                         </div>
@@ -78,25 +79,25 @@ include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">color</label>
-                                    <input type="text" name="mascota_color" value="<?php echo $mascota_color; ?>" class="form-control" disabled>
+                                    <input type="text" name="mascota_color" value="<?php echo $mascota_color; ?>" class="form-control" >
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Peso Kg</label>
-                                    <input type="int" name="mascota_peso" value="<?php echo $mascota_peso; ?>" class="form-control">
+                                    <input type="number" name="mascota_peso" value="<?php echo $mascota_peso; ?>" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Altura </label>
-                                    <input type="int" name="mascota_altura" value="<?php echo $mascota_altura; ?>" class="form-control" >
+                                    <input type="number" name="mascota_altura" value="<?php echo $mascota_altura; ?>" class="form-control" >
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
                                     <label for="">Fecha Nacimiento</label>
-                                    <input type="date" name="mascota_fecha_nacimiento" value="<?php echo $mascota_fecha_nacimiento; ?>" class="form-control" disabled>
+                                    <input type="date" name="mascota_fecha_nacimiento" value="<?php echo $mascota_fecha_nacimiento; ?>" class="form-control" >
                                 </div>
                             </div>
                         </div>
