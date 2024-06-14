@@ -2,20 +2,26 @@
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
 $id = $_GET['id'];
-include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php');
+include('../../app/controllers/fichamedica_controllers/datos_fichamedica_controller.php');
 ?>
 <div class="container-fluid">
-    <h1>Datos de la Mascota <?php echo $id;?></h1>
+    <h1>Datos de la Ficha Medica <?php echo $id;?></h1>
     <div class="row">
         <div class="col-md-12">
             <div class="card card-outline card-danger">
                 <div class="card-header">
-                    <p class="h3 text-center"><b>¿Estas seguro de querer eliminar esta Mascota?</b></p>
+                    <p class="h3 text-center"><b>¿Estas seguro de querer eliminar esta Ficha Medica?</b></p>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <!-- se envia formulario a controlador -->
                     <div class="row">
+                    <div class="col-md-4">
+                            <div class="form-group"> <!-- propio de bootstrap -->
+                                <label for="">id Ficha Medica: </label>
+                                <input type="number" value="<?php echo $id; ?>" name="id" class="form-control" disabled>
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
                                 <label for="">id mascota: </label>
@@ -24,32 +30,32 @@ include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="">Nombre: </label>
-                                <input type="text" value="<?php echo $mascota_nombre; ?>" name="mascota_nombre" class="form-control" disabled>
+                                <label for="">Diagnostico: </label>
+                                <input type="text" value="<?php echo $diagnostico; ?>" name="diagnostico" class="form-control" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Tipo</label>
-                                <input type="text" class="form-cont" value="<?php echo $mascota_tipo; ?>" name="mascota_tipo" disabled>
+                                <label for="">Tratamiento</label>
+                                <input type="text" class="form-cont" value="<?php echo $tratamiento; ?>" name="tratamiento" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">raza</label>
-                                <input type="text" class="form-cont" value="<?php echo $mascota_raza; ?>" name="mascota_raza" disabled>
+                                <label for="">Fecha</label>
+                                <input type="text" class="form-cont" value="<?php echo $fecha; ?>" name="fecha" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">edad</label>
-                                <input type="number" class="form-cont" value="<?php echo $mascota_edad; ?>" name="mascota_edad" disabled>
+                                <label for="">ID Especialista :</label>
+                                <input type="number" class="form-cont" value="<?php echo $especialista_id; ?>" name="especialista_id" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Cliente id</label>
-                                <input type="number" class="form-cont" value="<?php echo $cliente_id; ?>" name="cliente_id" disabled>
+                                <label for="">Emitida</label>
+                                <input type="text" class="form-cont" value="<?php echo $fyf_creacion; ?>" name="fyf_creacion" disabled>
                             </div>
                         </div>
                     </div>
@@ -58,9 +64,9 @@ include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php
 
                     <div class="col-md-12 row justify-content-center">
                         <div class="form-group"> <!-- propio de bootstrap -->
-                            <form action="<?php echo $URL?>/app/controllers/mascotas_controllers/delete_mascota_controller.php" method="post">
-                                <input type="number" value="<?php echo $mascota_id; ?>" name="mascota_id" hidden>
-                                <a href="show_mascota.php" class="btn btn-secondary">Cancelar</a>
+                            <form action="<?php echo $URL?>/app/controllers/fichamedica_controllers/delete_fichamedica_controller.php" method="post">
+                                <input type="text" value="<?php echo $id; ?>" name="id" hidden>
+                                <a href="showfichamedica.php" class="btn btn-secondary">Cancelar</a>
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Borrar</button>
                             </form>
                         </div>

@@ -1,31 +1,37 @@
 <?php
+session_start(); // Inicia la sesión antes de realizar cualquier operación con $_SESSION
 
 include("../../config.php");
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM tb_usuarios WHERE email = '$email'";
-$query = $pdo->prepare($sql); //pdo sale de la conexion de la base de datos
-$query->execute();
+$sql = "SELECT * FROM tb_usuarios WHERE email = :email";
+$query = $pdo->prepare($sql);
+$query->execute(array(':email' => $email));
 
-$usuarios = $query->fetchAll(PDO::FETCH_ASSOC); //la consulta la pasamos a un array
+$usuario = $query->fetch(PDO::FETCH_ASSOC); // Utiliza fetch en lugar de fetchAll, ya que solo necesitamos un usuario
 
-$contador = 0;
-
-foreach ($usuarios as $usuario) {
-  $contador = $contador + 1;
+if ($usuario) {
   $password_tabla = $usuario['password'];
   $rol = $usuario['rol'];
-}
+  $nombre = $usuario['nombre'];
+  $apellido_paterno = $usuario['apellido_paterno'];
 
-$hash = $password_tabla; //contrausuario
-if (($contador > 0) && (password_verify($password, $hash))) {
-  echo "Bienvenido al sistema";
-  session_start(); //se crea la sesion
-  $_SESSION['sesion email'] = $email; //copiamos la variable a otras vistas
-  header('Location: '.$URL.'/admin');
+  if (password_verify($password, $password_tabla)) {
+    echo "Bienvenido al sistema";
+    $_SESSION['sesion email'] = $email;
+    $_SESSION['rol'] = $rol;
+    $_SESSION['nombre'] = $nombre;
+    $_SESSION['apellido_paterno'] = $apellido_paterno;
+    header('Location: ' . $URL . '/admin');
+    exit; // Importante: detener la ejecución después de redirigir
+  } else {
+    echo "Error en los datos";
+    header('Location: ' . $URL . '/login');
+    exit; // Importante: detener la ejecución después de redirigir
+  }
 } else {
-  echo "error en los datos";
-  header('Location: '. $URL.'/login');
+  echo "Usuario no encontrado";
+  header('Location: ' . $URL . '/login');
+  exit; // Importante: detener la ejecución después de redirigir
 }
-

@@ -1,6 +1,18 @@
 <?php
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
+
+// Verificar si el usuario tiene permiso para acceder a esta página
+$rol_permitido = 'ADMINISTRADOR';
+
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== $rol_permitido) {
+   // Si el rol del usuario no está permitido, cierra la sesión y redirige al login
+   session_unset(); // Elimina todas las variables de sesión
+   session_destroy(); // Destruye la sesión
+   header('Location: '.$URL.'/login'); // Redirige al login
+   exit; // Detiene la ejecución del script
+}
+
 $id = $_GET['id'];
 include('../../app/controllers/suministros_controllers/datos_suministro_controller.php');
 ?>
@@ -16,42 +28,35 @@ include('../../app/controllers/suministros_controllers/datos_suministro_controll
                 <div class="card-body">
                     <!-- se envia formulario a controlador -->
                     <div class="row">
+
                         <div class="col-md-4">
                             <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">id producto: </label>
-                                <input type="number" value="<?php echo $id; ?>" name="id" class="form-control" disabled>
+                                <label for="">Nombre</label>
+                                <input type="text" class="form-control" value="<?php echo $nombre; ?>" name="nombre" disabled>
                             </div>
                         </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group"> <!-- propio de bootstrap -->
+                                <label for="">Codigo</label>
+                                <input type="text" class="form-control" value="<?php echo $codigo; ?>" name="codigo" disabled>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group"> <!-- propio de bootstrap -->
+                                <label for="">Stock</label>
+                                <input type="number" class="form-control" value="<?php echo $stock; ?>" name="stock" disabled>
+                            </div>
+                        </div>
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">descripcion: </label>
                                 <input type="text" value="<?php echo $descripcion; ?>" name="descripcion" class="form-control" disabled>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Nombre</label>
-                                <input type="text" class="form-cont" value="<?php echo $nombre; ?>" name="nombre" disabled>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Stock</label>
-                                <input type="number" class="form-cont" value="<?php echo $stock; ?>" name="stock" disabled>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Creacion</label>
-                                <input type="text" class="form-cont" value="<?php echo $fyh_creacion; ?>" name="fyh_creacion" disabled>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group"> <!-- propio de bootstrap -->
-                                <label for="">Actualizacion</label>
-                                <input type="text" class="form-cont" value="<?php echo $fyh_actualizacion; ?>" name="fyh_actualizacion" disabled>
-                            </div>
-                        </div>
+
                     </div>
 
                     <hr class="border border-danger border-2 opacity-50">

@@ -265,8 +265,8 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente1.avif" height="250px"
-                                            class="card-img-top" alt="...">
+                                        <img src="private/img/clientes/cliente1.avif" style="width: 230px; height: 250px;"
+                                            >
                                         <div class="card-body">
                                             <h5 class="card-title">Laura García</h5>
                                             <p class="card-text">Atención excepcional para nuestras mascotas. Siempre
@@ -308,8 +308,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente4.jpg" height="250px" class="card-img-top"
-                                            alt="...">
+                                        <img src="private/img/clientes/cliente4.jpg" style="width: 230px; height: 250px;">
                                         <div class="card-body">
                                             <h5 class="card-title">Marta López</h5>
                                             <p class="card-text">Verdadero amor por los animales y un compromiso
@@ -321,8 +320,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente5.jpg" height="250px" class="card-img-top"
-                                            alt="...">
+                                        <img src="private/img/clientes/cliente5.jpg" style="width: 230px; height: 250px;"
+                                            >
                                         <div class="card-body">
                                             <h5 class="card-title">Diego Sánchez</h5>
                                             <p class="card-text">Fundamentales en el cuidado de nuestras mascotas.
@@ -334,8 +333,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente6.jpg" height="250px" class="card-img-top"
-                                            alt="...">
+                                        <img src="private/img/clientes/cliente6.jpg" style="width: 230px; height: 250px;"
+                                            >
                                         <div class="card-body">
                                             <h5 class="card-title">Javier González</h5>
                                             <p class="card-text">Excepcional desde la primera llamada telefónica hasta
@@ -351,8 +350,8 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente7.avif" height="250px"
-                                            class="card-img-top" alt="...">
+                                        <img src="private/img/clientes/cliente7.avif" style="width: 240px; height: 250px;"
+                                            >
                                         <div class="card-body">
                                             <h5 class="card-title">Camila Catalan</h5>
                                             <p class="card-text">El equipo de esta veterinaria es excepcional.
