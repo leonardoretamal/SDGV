@@ -60,6 +60,8 @@ include("../app/config.php");
               </div>
             </div>
           </div>
+          <p class="fs-5 fw-bold text-center">¿No tienes cuenta?</p>
+          <p class="fs-5 fw-bold text-center">ven a nuestra sucursal</p>
           <hr>
           <button type="submit" class="btn btn-outline-primary" style="width:100%">Ingresar</button>
           <br><br>

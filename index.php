@@ -112,7 +112,7 @@
                             experiencia única!
                             Nuestro equipo está listo para atenderte y proporcionarte el mejor servicio posible. No
                             esperes más, reserva tu cita hoy. </p>
-                        <a href="#" class="btn btn-lg" style="background-color: #1e7cc0;">Reservar Cita</a>
+                        <a href="login/index.php" class="btn btn-lg" style="background-color: #1e7cc0;">Reservar Cita</a>
                     </div>
                 </div>
             </div>
