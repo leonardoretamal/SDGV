@@ -1,18 +1,16 @@
-<?php 
-    include("app/controllers/reCaptcha/keys.php");
-    //Esto trae el arreglo donde tenemos almacenadas las contraseñas
+<?php
+include("app/controllers/reCaptcha/keys.php");
+//Esto trae el arreglo donde tenemos almacenadas las contraseñas
 ?>
 
-<!doctype html
-<html lang="es">
+<!doctype html <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inicio SDGV</title>
     <!-- framework bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/diable.css">
     <!-- iconos de boostrap -->
@@ -21,47 +19,34 @@
     <!-- JQUERY -->
     <script src="public/js/jquery-3.7.1.min.js"></script>
 </head>
+
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-primary ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="private/img/logo1.png" alt="logoSDGV" width="60" height="60">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon "></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active fs-6 text-lg text-white" aria-current="page" href="#"><i class="bi bi-house-fill"></i>
+                        <a class="nav-link active fs-6 text-lg text-white" aria-current="page" href="/sdgv"><i class="bi bi-house-fill"></i>
                             Inicio</a>
                     </li>
                 </ul>
 
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link fs-4 text-lg text-white" href="#"><i class="bi bi-calendar3"></i> Citas</a>
+                        <a class="nav-link fs-4 text-lg text-white" href="login/index.php"><i class="bi bi-calendar3"></i> Citas</a>
                     </li>
                 </ul>
 
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fs-6 text-lg text-white" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Ingresar
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item text-primary" href="login/logincliente.php"><i class="bi bi-box-arrow-right"></i> Iniciar Sesion
-                                    Clientes</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item text-primary" href="login/index.php"><i class="bi bi-box-arrow-right"></i>
-                                    Iniciar Sesion Trabajador</a></li>
-                            <!-- <li><a class="dropdown-item" href="login/registro.php">Registrarse</a></li> -->
-                        </ul>
+                    <li class="nav-item">
+                    <li><a class="nav-link text-lg text-white" href="login/index.php"><i class="bi bi-box-arrow-right"></i>
+                            Iniciar Sesion </a></li>
                     </li>
                 </ul>
             </div>
@@ -70,19 +55,15 @@
     <section>
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active" id="inicio">
                     <img src="private/img/gato2.jpg" class="d-block w-100 img-fluid" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-4 fw-semibold text-center" 
-                            style="background-color:rgba(30,124,194, .5); border-radius: 10px; padding: 10px;">
+                        <p class="fs-4 fw-semibold text-center" style="background-color:rgba(30,124,194, .5); border-radius: 10px; padding: 10px;">
                             Bienvenido al refugio de amor y cuidado para tus
                             mascotas. En nuestra clínica veterinaria, cada ladrido, ronroneo y cola que menea es
                             recibido con cariño y atención experta. Descubre cómo nuestro equipo de profesionales
@@ -94,8 +75,7 @@
                 <div class="carousel-item">
                     <img src="private/img/dog-8434227_1280.jpg" class="d-block w-100 img-fluid" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-4 fw-semibold text-center"
-                            style="background-color:rgba(30,124,194, .5); border-radius: 10px; padding: 10px;">
+                        <p class="fs-4 fw-semibold text-center" style="background-color:rgba(30,124,194, .5); border-radius: 10px; padding: 10px;">
                             Cuidando a los amigos peludos de tu familia desde hace años. En nuestra clínica
                             veterinaria, nos enorgullecemos de ofrecer un ambiente cálido y acogedor donde las mascotas
                             son tratadas con compasión y respeto. Desde chequeos de rutina hasta emergencias médicas,
@@ -106,8 +86,7 @@
                 <div class="carousel-item">
                     <img src="private/img/dog-8434228_1280.jpg" class="d-block w-100 img-fluid" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <p id="bnr-1" class="fs-4 fw-semibold text-center"
-                            style="background-color:rgba(30,124,194, .5); border-radius: 10px; padding: 10px; ">¡Reserva
+                        <p id="bnr-1" class="fs-4 fw-semibold text-center" style="background-color:rgba(30,124,194, .5); border-radius: 10px; padding: 10px; ">¡Reserva
                             tu cita ahora mismo y asegura tu lugar para una
                             experiencia única!
                             Nuestro equipo está listo para atenderte y proporcionarte el mejor servicio posible. No
@@ -116,13 +95,11 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
             </button>
@@ -131,7 +108,7 @@
     <section class="info">
         <div container>
             <div class="row">
-                <div  class="col-md-5 col-sm-12 container-sm"><img src="private/img/gatoperro.jpg" width="100%"></div>
+                <div class="col-md-5 col-sm-12 container-sm"><img src="private/img/gatoperro.jpg" width="100%"></div>
                 <div class="col-md-6 col-sm-12 conta">
                     <div class="container-sm">
                         <br><br><br>
@@ -214,8 +191,7 @@
                     <br>
                 </div>
                 <div class="col-md-3 zoomP ">
-                    <img src="private/img/publicacion-redes-sociales-promocion-adopcion-animales-adopt-flyer-texto-save-life-perros-divertidos_255592-891.avif"
-                        width="100%" alt="">
+                    <img src="private/img/publicacion-redes-sociales-promocion-adopcion-animales-adopt-flyer-texto-save-life-perros-divertidos_255592-891.avif" width="100%" alt="">
                 </div>
             </div>
         </div>
@@ -265,8 +241,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente1.avif" style="width: 230px; height: 250px;"
-                                            >
+                                        <img src="private/img/clientes/cliente1.avif" style="width: 230px; height: 250px;">
                                         <div class="card-body">
                                             <h5 class="card-title">Laura García</h5>
                                             <p class="card-text">Atención excepcional para nuestras mascotas. Siempre
@@ -278,8 +253,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente2.jpg" height="250px" class="card-img-top"
-                                            alt="...">
+                                        <img src="private/img/clientes/cliente2.jpg" height="250px" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">Ana Martínez.</h5>
                                             <p class="card-text">Siempre nos sentimos cuidados y respetados. Personal
@@ -291,8 +265,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente3.jpg" height="250px" class="card-img-top"
-                                            alt="...">
+                                        <img src="private/img/clientes/cliente3.jpg" height="250px" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">Carlos Rodríguez</h5>
                                             <p class="card-text">Increíblemente comprensivos y atentos durante el
@@ -320,8 +293,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente5.jpg" style="width: 230px; height: 250px;"
-                                            >
+                                        <img src="private/img/clientes/cliente5.jpg" style="width: 230px; height: 250px;">
                                         <div class="card-body">
                                             <h5 class="card-title">Diego Sánchez</h5>
                                             <p class="card-text">Fundamentales en el cuidado de nuestras mascotas.
@@ -333,8 +305,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente6.jpg" style="width: 230px; height: 250px;"
-                                            >
+                                        <img src="private/img/clientes/cliente6.jpg" style="width: 230px; height: 250px;">
                                         <div class="card-body">
                                             <h5 class="card-title">Javier González</h5>
                                             <p class="card-text">Excepcional desde la primera llamada telefónica hasta
@@ -350,8 +321,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente7.avif" style="width: 240px; height: 250px;"
-                                            >
+                                        <img src="private/img/clientes/cliente7.avif" style="width: 240px; height: 250px;">
                                         <div class="card-body">
                                             <h5 class="card-title">Camila Catalan</h5>
                                             <p class="card-text">El equipo de esta veterinaria es excepcional.
@@ -364,8 +334,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente8.avif" height="250px"
-                                            class="card-img-top" alt="...">
+                                        <img src="private/img/clientes/cliente8.avif" height="250px" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">Josefa Claveria</h5>
                                             <p class="card-text">Increíble atención veterinaria.
@@ -378,8 +347,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card">
-                                        <img src="private/img/clientes/cliente9.jpg" height="250px" class="card-img-top"
-                                            alt="...">
+                                        <img src="private/img/clientes/cliente9.jpg" height="250px" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">Aylin Hernandez</h5>
                                             <p class="card-text">No podríamos estar más felices con el servicio que
@@ -394,13 +362,11 @@
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Anterior</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Siguiente</span>
                     </button>
@@ -413,10 +379,7 @@
         <div class="container-sm">
             <h1 class="mapsH1">Encuentranos aquí</h1>
             <br><br>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.0324460694465!2d-70.65218772521408!3d-33.44846119740874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c50bb33cf719%3A0x5b3aea7806cdf0b8!2sInstituto%20Profesional%20Los%20Leones!5e0!3m2!1ses-419!2scl!4v1712097849874!5m2!1ses-419!2scl"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.0324460694465!2d-70.65218772521408!3d-33.44846119740874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c50bb33cf719%3A0x5b3aea7806cdf0b8!2sInstituto%20Profesional%20Los%20Leones!5e0!3m2!1ses-419!2scl!4v1712097849874!5m2!1ses-419!2scl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <br><br>
     </section>
@@ -434,11 +397,11 @@
                         </div>
                         <div class="card-body">
                             <form class="" action="app/controllers/reCaptcha/verificado.php" method="post">
-                                <?php 
-                                    if (isset($_GET['error'])) {
-                                        $error = $_GET['error'];
-                                        echo "<p class='error_captcha'>$error</p>";
-                                    }
+                                <?php
+                                if (isset($_GET['error'])) {
+                                    $error = $_GET['error'];
+                                    echo "<p class='error_captcha'>$error</p>";
+                                }
                                 ?>
                                 <div class="form-group">
                                     <label for=""><b>Nombre</b></label>
@@ -482,7 +445,7 @@
                         <a href="#sobre nosotros" style="color: white;"><u>Sobre nosotros</u></a><br>
                         <a href="#galeria" style="color: white;"><u>Galeria</u></a><br>
                         <a href="#Testimonios" style="color: white;"><u>Testimonios</u></a><br>
-                        <a href="#Opinion expertos" style="color: white;"u>Opinion experto</u></a>
+                        <a href="#Opinion expertos" style="color: white;" u>Opinion experto</u></a>
 
                     </p>
                 </div>
@@ -507,9 +470,9 @@
 
     <script>
         grecaptcha.ready(() => {
-            grecaptcha.execute('<?php echo $claves['publica']; ?>', 
-            {action: 'formulario'}
-            ).then( ( token ) => {
+            grecaptcha.execute('<?php echo $claves['publica']; ?>', {
+                action: 'formulario'
+            }).then((token) => {
                 const idToken = document.getElementById('token');
                 const btn_disable = document.getElementById('btn');
 
@@ -522,17 +485,16 @@
 
     <script type="text/javascript">
         var nav = document.querySelector('nav');
-  
-        window.addEventListener('scroll', function () {
-          if (window.pageYOffset > 400) {
-            nav.classList.add('bg-primary','bg-gradient', 'shadow');
-          } else {
-            nav.classList.remove('bg-primary','bg-gradient', 'shadow');
-          }
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 400) {
+                nav.classList.add('bg-primary', 'bg-gradient', 'shadow');
+            } else {
+                nav.classList.remove('bg-primary', 'bg-gradient', 'shadow');
+            }
         });
-      </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>

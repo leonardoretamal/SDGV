@@ -3,7 +3,7 @@ include('../../config.php');
 
 session_start(); // Iniciamos la sesión para luego destruirla
 
-if (isset($_SESSION["sesion email"])) {
+if (isset($_SESSION["sesion_email"])) {
     session_unset(); // Limpiamos todas las variables de sesión
     session_destroy(); // Destruimos la sesión
     header('Location: '. $URL.'/login'); // Redirige al inicio de sesión

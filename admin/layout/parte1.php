@@ -1,7 +1,7 @@
 <?php
 
 session_start(); //volvemos a habilitar la variable de sesion
-if (isset($_SESSION["sesion email"])) {
+if (isset($_SESSION["sesion_email"])) {
     /* echo "Ha pasado por el login"; */
 } else {
     //echo "no ha pasado por el login";
@@ -11,22 +11,24 @@ if (isset($_SESSION["sesion email"])) {
 // Obtén el rol del usuario de la variable de sesión
 $rol_usuario = isset($_SESSION['rol']) ? $_SESSION['rol'] : 'No se encontraron datos';
 $nombre = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : 'No se encontraron datos';
+$email = isset($_SESSION['sesion_email']) ? $_SESSION['sesion_email'] : 'No se encontraron datos';
+$id_usuario = isset($_SESSION['id']) ? $_SESSION['id'] : 'No se encontraron datos';
 $apellido_paterno = isset($_SESSION['apellido_paterno']) ? $_SESSION['apellido_paterno'] : 'No se encontraron datos';
 
 // Verifica el rol del usuario y define las restricciones de visualización de las pestañas
 $roles_permitidos = array(
-    'ADMINISTRADOR' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas'),
-    'Recepcionista' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas'),
-    'Veterinario' => array('Suministros', 'Mascotas'),
-    'Cliente' => array('Mascotas', 'Facturas')
+    'ADMINISTRADOR' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
+    'Recepcionista' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
+    'Veterinario' => array('Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
+    'Cliente' => array('Mascotas', 'Facturas', 'Ficha_Medica')
 );
 
 // Verifica los ingresos permitidos según el rol del usuario
 $ingresos_permitidos = array(
-    'ADMINISTRADOR' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas'),
-    'Recepcionista' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas'),
-    'Veterinario' => array('Suministros', 'Mascotas'),
-    'Cliente' => array() // Cliente no tiene ingresos permitidos
+    'ADMINISTRADOR' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
+    'Recepcionista' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
+    'Veterinario' => array('Suministros', 'Mascotas', 'Ficha_Medica', 'Citas'),
+    'Cliente' => array('Citas') // Cliente puede ingresar solo citas
 );
 
 // Función para verificar si una pestaña está permitida para el rol actual del usuario
@@ -221,7 +223,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <?php if (esPestanaPermitida('Facturas', $roles_permitidos, $rol_usuario)) : ?>
                             <li class="nav-item ">
                                 <a href="#" class="nav-link active">
-                                    <i class="fa fa-edit"></i>
+                                    <i class='fas fa-file-invoice'></i>
                                     <p>
                                         Facturas
                                         <i class="right fas fa-angle-left"></i>
@@ -246,53 +248,55 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         <?php endif; ?>
 
-                        <li class="nav-item ">
-                            <a href="#" class="nav-link active">
-                                <i class="fa fa-edit"></i>
-                                <p>
-                                    Ficha Medica
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="<?php echo $URL; ?>/admin/fichamedicas/showfichamedica.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Ver Ficha Medica</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?php echo $URL; ?>/admin/fichamedicas/agregar_fichamedica.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Ingresar Ficha Medica</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        <?php if (esPestanaPermitida('Ficha_Medica', $roles_permitidos, $rol_usuario)) : ?>
+                            <li class="nav-item ">
+                                <a href="#" class="nav-link active">
+                                    <i class="fa fa-heartbeat"></i>
+                                    <p>
+                                        Ficha Medica
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="<?php echo $URL; ?>/admin/fichamedicas/showfichamedica.php" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Ver Ficha Medica</p>
+                                        </a>
+                                    </li>
+                                    <?php if (esIngresoPermitido('Ficha_Medica', $ingresos_permitidos, $rol_usuario)) : ?>
+                                        <li class="nav-item">
+                                            <a href="<?php echo $URL; ?>/admin/fichamedicas/agregar_fichamedica.php" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Ingresar Ficha Medica</p>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </li>
+                        <?php endif; ?>
 
-                        <li class="nav-item ">
-                            <a href="#" class="nav-link active">
-                                <i class="fa fa-edit"></i>
-                                <p>
-                                    Citas
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="<?php echo $URL; ?>/admin/citas/index.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Ver citas</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Ingresar Ficha Medica</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        <?php if (esPestanaPermitida('Citas', $roles_permitidos, $rol_usuario)) : ?>
+                            <li class="nav-item ">
+                                <a href="#" class="nav-link active">
+                                    <i class="bi bi-calendar3"></i>
+                                    <p>
+                                        Citas
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <?php if (esIngresoPermitido('Citas', $ingresos_permitidos, $rol_usuario)) : ?>
+                                        <li class="nav-item">
+                                            <a href="<?php echo $URL; ?>/admin/citas/index.php" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Ver y ingresar citas</p>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </li>
+                        <?php endif; ?>
 
 
                         <li class="nav-item">
