@@ -16,13 +16,15 @@ if ($usuario) {
   $rol = $usuario['rol'];
   $nombre = $usuario['nombre'];
   $apellido_paterno = $usuario['apellido_paterno'];
+  $id_usuario = $usuario['id'];
 
   if (password_verify($password, $password_tabla)) {
     echo "Bienvenido al sistema";
-    $_SESSION['sesion email'] = $email;
+    $_SESSION['sesion_email'] = $email;
     $_SESSION['rol'] = $rol;
     $_SESSION['nombre'] = $nombre;
     $_SESSION['apellido_paterno'] = $apellido_paterno;
+    $_SESSION['id'] = $id_usuario;
     header('Location: ' . $URL . '/admin');
     exit; // Importante: detener la ejecución después de redirigir
   } else {
