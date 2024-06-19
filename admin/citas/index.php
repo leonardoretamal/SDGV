@@ -26,22 +26,42 @@ include("../../admin/layout/parte1.php");
                     if (numeroDia == 6) { // 6 representa domingo
                         alert("No hay atención disponible este día.");
                     } else {
-                        $('#modal_reservas').modal("show");
-                        $('#dia_de_la_semana').html(dias[numeroDia] + " " + a);
 
-                        var fecha = info.dateStr;
+                        var ano = new Date().getFullYear();
+                        var mes = new Date().getMonth() + 1;
+                        var dia = new Date().getDate();
+                        // Agregar un 0 delante del mes si es menor de 10
+                        if (mes < 10) {
+                            mes = "0" + mes;
+                        }
+                        // Agregar un 0 delante del día si es menor de 10
+                        if (dia < 10) {
+                            dia = "0" + dia;
+                        }
+                        var hoy = ano + "-" + mes + "-" + dia;
 
-                        var res = "";
-                        var url = "<?php echo $URL ?>/app/controllers/reservas/verificar_horario.php";
+                        if (hoy < a) {
+                            $('#modal_reservas').modal("show");
+                            $('#dia_de_la_semana').html(dias[numeroDia] + " " + a);
 
-                        $.get(url, {
-                            fecha: fecha
-                        }, function(datos) { //consulta ajax estamos mezclando java con php para no refrescar la pagina
+                            var fecha = info.dateStr;
 
-                            res = datos;
-                            $('#respuesta_horario').html(res);
+                            var res = "";
+                            var url = "<?php echo $URL ?>/app/controllers/reservas/verificar_horario.php";
 
-                        });
+                            $.get(url, {
+                                fecha: fecha
+                            }, function(datos) { //consulta ajax estamos mezclando java con php para no refrescar la pagina
+
+                                res = datos;
+                                $('#respuesta_horario').html(res);
+
+                            });
+
+                        } else {
+                            alert("Dia no disponible para reserva");
+                        }
+
 
                     }
                 }
@@ -70,14 +90,12 @@ include("../../admin/layout/parte1.php");
 
 
                 <!-- Modal -->
-                <div class="modal fade" id="modal_reservas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modal_reservas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu cita para el día <span id="dia_de_la_semana"></span></h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
                             <div class="modal-body">
+                                <p class="fs-3 text-center">Reserva tu cita</p>
+                                <hr>
                                 <div class="row">
                                     <div id="respuesta_horario"></div>
                                     <div class="col-md-6">
@@ -101,7 +119,7 @@ include("../../admin/layout/parte1.php");
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <a href="" class="btn btn-primary">Escoger otra fecha</a>
                             </div>
                         </div>
                     </div>
@@ -190,7 +208,7 @@ include("../../admin/layout/parte1.php");
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <a href="" class="btn btn-secondary">Cancelar</a>
                         <button type="submit" class="btn btn-primary">Registrar Cita</button>
                     </div>
                 </form>
