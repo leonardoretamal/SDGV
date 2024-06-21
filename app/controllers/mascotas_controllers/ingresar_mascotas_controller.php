@@ -14,7 +14,20 @@ $peso = $_POST["peso"];
 $altura = $_POST["altura"];
 $fecha_nacimiento = $_POST["fecha_nacimiento"];
 
+// Verificar si el cliente_id existe en tb_usuarios
+$sql = "SELECT id FROM tb_usuarios WHERE id = :cliente_id";
+$query = $pdo->prepare($sql);
+$query->bindParam(':cliente_id', $cliente_id);
+$query->execute();
+$usuario = $query->fetch(PDO::FETCH_ASSOC);
 
+if (!$usuario) {
+    session_start();
+    $_SESSION['mensaje'] = "El cliente con ID $cliente_id no existe.";
+    $_SESSION['icono'] = 'error';
+    header('Location: ' . $URL . '/admin/mascotas/show_mascota.php');
+    exit();
+}
 
 
 // Verificar si la mascota ya está registrada
@@ -27,45 +40,45 @@ $items = $query->fetchAll(PDO::FETCH_ASSOC);
 
 if (count($items) > 0) {
     session_start();
-    $_SESSION['mensaje'] = "Esta Mascota ya está registrado en la base de datos: ".$nombre."-".$cliente_id2;
+    $_SESSION['mensaje'] = "Esta Mascota ya está registrado en la base de datos: " . $nombre . "-" . $cliente_id2;
     $_SESSION['icono'] = 'error';
     header('Location: ' . $URL . '/admin/mascotas/show_mascota.php');
     exit();
 } else {
-    
-        $fyh_creacion = date('Y-m-d H:i:s');
-   
 
-        // Preparar y ejecutar la inserción en la base de datos
-        $sentencia = $pdo->prepare("INSERT INTO tb_mascotas (id, nombre,tipo,raza,edad,cliente_id, fyh_creacion,sexo,color,peso,altura,fecha_nacimiento) 
+    $fyh_creacion = date('Y-m-d H:i:s');
+
+
+    // Preparar y ejecutar la inserción en la base de datos
+    $sentencia = $pdo->prepare("INSERT INTO tb_mascotas (id, nombre,tipo,raza,edad,cliente_id, fyh_creacion,sexo,color,peso,altura,fecha_nacimiento) 
                                     values (:id, :nombre,:tipo, :raza, :edad, :cliente_id ,:fyh_creacion,:sexo,:color,:peso,:altura,:fecha_nacimiento)");
-                                    
-        $sentencia->bindParam(':id', $id);
-        $sentencia->bindParam(':nombre', $nombre);
-        $sentencia->bindParam(':tipo', $tipo);
-        $sentencia->bindParam(':raza', $raza);
-        $sentencia->bindParam(':edad', $edad);
-        $sentencia->bindParam(':cliente_id', $cliente_id);
-        $sentencia->bindParam(':fyh_creacion', $fyh_creacion);
-        $sentencia->bindParam(':sexo', $sexo);
-        $sentencia->bindParam(':color', $color);
-        $sentencia->bindParam(':peso', $peso);
-        $sentencia->bindParam(':altura', $altura);
-        $sentencia->bindParam(':fecha_nacimiento', $fecha_nacimiento);
-        
-        
-        
-        if ($sentencia->execute()) {
-            session_start();
-            $_SESSION['mensaje'] = "Mascota registrado correctamente";
-            $_SESSION['icono'] = 'success';
-            header('Location: ' . $URL . '/admin/mascotas/show_mascota.php');
-            exit();
-        } else {
-            session_start();
-            $_SESSION['mensaje'] = "La mascota no se pudo registrar";
-            $_SESSION['icono'] = 'error';
-            header('Location: ' . $URL . '/admin/mascotas/show_mascota.php');
-            exit();
-        }
+
+    $sentencia->bindParam(':id', $id);
+    $sentencia->bindParam(':nombre', $nombre);
+    $sentencia->bindParam(':tipo', $tipo);
+    $sentencia->bindParam(':raza', $raza);
+    $sentencia->bindParam(':edad', $edad);
+    $sentencia->bindParam(':cliente_id', $cliente_id);
+    $sentencia->bindParam(':fyh_creacion', $fyh_creacion);
+    $sentencia->bindParam(':sexo', $sexo);
+    $sentencia->bindParam(':color', $color);
+    $sentencia->bindParam(':peso', $peso);
+    $sentencia->bindParam(':altura', $altura);
+    $sentencia->bindParam(':fecha_nacimiento', $fecha_nacimiento);
+
+
+
+    if ($sentencia->execute()) {
+        session_start();
+        $_SESSION['mensaje'] = "Mascota registrado correctamente";
+        $_SESSION['icono'] = 'success';
+        header('Location: ' . $URL . '/admin/mascotas/show_mascota.php');
+        exit();
+    } else {
+        session_start();
+        $_SESSION['mensaje'] = "La mascota no se pudo registrar";
+        $_SESSION['icono'] = 'error';
+        header('Location: ' . $URL . '/admin/mascotas/show_mascota.php');
+        exit();
+    }
 }
