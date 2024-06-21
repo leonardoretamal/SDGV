@@ -7,7 +7,6 @@ include("../../admin/layout/parte1.php");
 $roles_permitidos = array(
     'ADMINISTRADOR',
     'Recepcionista',
-    'Veterinario'
 );
 
 // Verifica si el rol del usuario está permitido

@@ -20,7 +20,7 @@ $roles_permitidos = array(
     'ADMINISTRADOR' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
     'Recepcionista' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
     'Veterinario' => array('Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
-    'Cliente' => array('Mascotas', 'Facturas', 'Ficha_Medica')
+    'Cliente' => array('Facturas', 'Ficha_Medica')
 );
 
 // Verifica los ingresos permitidos según el rol del usuario
@@ -88,6 +88,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.es.min.js"></script>
     <!-- fullcalendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+    <!-- jsPDFautotable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.12/jspdf.plugin.autotable.min.js"></script>
+
 
 
 </head>

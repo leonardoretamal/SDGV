@@ -1,6 +1,24 @@
 <?php
 include("../../app/config.php"); //para tener conexion a base de datos.
 include("../../admin/layout/parte1.php");
+
+// Verifica si el usuario tiene un rol permitido para acceder a esta página 
+//siempre debajo de parte1.php porque la sesion esta inicia ahi 
+$roles_permitidos = array(
+    'ADMINISTRADOR',
+    'Recepcionista',
+    'Veterinario'
+);
+
+// Verifica si el rol del usuario está permitido
+if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) {
+    // Si el rol del usuario no está permitido, cierra la sesión y redirige al login
+    session_unset(); // Elimina todas las variables de sesión
+    session_destroy(); // Destruye la sesión
+    header('Location: ' . $URL . '/login'); // Redirige al login
+    exit; // Detiene la ejecución del script
+}
+
 include("../../app/controllers/mascotas_controllers/mascotas.php");   ?>
 <br>
 <div class="container-fluid">
@@ -17,8 +35,8 @@ include("../../app/controllers/mascotas_controllers/mascotas.php");   ?>
                         <thead>
                             <tr class="text-center">
                                 <th>Nro</th>
-                                <th>ID</th>
-                                <th>Nombre</th>
+                                <th>ID Mascota</th>
+                                <th>Nombre Mascota</th>
                                 <th>RUT Cliente</th>
                                 <th>Nombre Cliente</th>
                                 <th>Apellido Paterno</th>
@@ -43,7 +61,9 @@ include("../../app/controllers/mascotas_controllers/mascotas.php");   ?>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="showmascota.php?id=<?php echo $id; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
                                             <a href="update_mascota.php?id=<?php echo $id; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i> Editar</a>
-                                            <a href="delete_mascota.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
+                                            <?php if ($_SESSION['rol'] == 'ADMINISTRADOR') : ?>
+                                                <a href="delete_mascota.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
+                                            <?php endif; ?>
                                         </div>
                                     </td>
                                 </tr>
@@ -71,12 +91,12 @@ include("../../admin/layout/mensaje.php");
             "pageLength": 5,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ productos",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Mascotas",
                 "infoEmpty": "Mostrando 0 a 0 de 0 productos",
-                "infoFiltered": "(Filtrado de _MAX_ total productos)",
+                "infoFiltered": "(Filtrado de _MAX_ total mascotas)",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ productos",
+                "lengthMenu": "Mostrar _MENU_ mascotas",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
                 "search": "Buscador:",

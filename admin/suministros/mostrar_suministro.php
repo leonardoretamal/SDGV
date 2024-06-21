@@ -5,6 +5,8 @@ include("../../admin/layout/parte1.php");
 // Verificar si el usuario tiene un rol permitido para acceder a esta página
 $roles_permitidos = array(
     'ADMINISTRADOR',
+    'Recepcionista',
+    'Veterinario',
 );
 
 // Verifica si el rol del usuario está permitido
@@ -68,13 +70,10 @@ include('../../app/controllers/suministros_controllers/datos_suministro_controll
                                 <input type="text" class="form-control" name="fyh_actualizacion" value="<?php echo $fyh_actualizacion; ?>" disabled>
                             </div>
                         </div>
-        
 
                     </div>
                 </div>
-                <!-- /.card-body -->
             </div>
-            <!-- /.card -->
         </div>
     </div>
 </div>

@@ -17,7 +17,7 @@ $fecha_nacimiento = $_POST["fecha_nacimiento"];
 
 
 
-// Verificar si el suministro ya está registrado
+// Verificar si la mascota ya está registrada
 $sql = "SELECT * FROM tb_mascotas WHERE nombre = :nombre and cliente_id = :cliente_id";
 $query = $pdo->prepare($sql);
 $query->bindParam(':cliente_id', $cliente_id);
@@ -27,7 +27,7 @@ $items = $query->fetchAll(PDO::FETCH_ASSOC);
 
 if (count($items) > 0) {
     session_start();
-    $_SESSION['mensaje'] = "Esta Mascota ya está registrado en la base de datos: " .$nombre."-". $cliente_id2;
+    $_SESSION['mensaje'] = "Esta Mascota ya está registrado en la base de datos: ".$nombre."-".$cliente_id2;
     $_SESSION['icono'] = 'error';
     header('Location: ' . $URL . '/admin/mascotas/show_mascota.php');
     exit();
@@ -63,7 +63,7 @@ if (count($items) > 0) {
             exit();
         } else {
             session_start();
-            $_SESSION['mensaje'] = "Mascota no se pudo registrar";
+            $_SESSION['mensaje'] = "La mascota no se pudo registrar";
             $_SESSION['icono'] = 'error';
             header('Location: ' . $URL . '/admin/mascotas/show_mascota.php');
             exit();
