@@ -11,6 +11,18 @@ $roles_permitidos = array(
 
 // Verifica si el rol del usuario está permitido
 if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) {
+
+?>
+
+    <div class="container-fluid">
+        <div class="alert alert-danger mt-3" role="alert">
+            <h4 class="alert-heading">Acceso denegado</h4>
+            <p>No tienes permisos suficientes para acceder a esta página. Por favor, contacta al administrador.</p>
+        </div>
+    </div>
+
+<?php
+
     // Si el rol del usuario no está permitido, cierra la sesión y redirige al login
     session_unset(); // Elimina todas las variables de sesión
     session_destroy(); // Destruye la sesión

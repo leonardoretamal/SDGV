@@ -226,34 +226,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         <?php endif; ?>
 
-                        <?php if (esPestanaPermitida('Facturas', $roles_permitidos, $rol_usuario)) : ?>
-                            <li class="nav-item ">
-                                <a href="#" class="nav-link active">
-                                    <i class='fas fa-file-invoice'></i>
-                                    <p>
-                                        Facturas
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?php echo $URL; ?>/admin/facturas/show_factura.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Ver Facturas</p>
-                                        </a>
-                                    </li>
-                                    <?php if (esIngresoPermitido('Facturas', $ingresos_permitidos, $rol_usuario)) : ?>
-                                        <li class="nav-item">
-                                            <a href="<?php echo $URL; ?>/admin/mascotas/agregar_mascota.php" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Ingresar Facturas</p>
-                                            </a>
-                                        </li>
-                                    <?php endif; ?>
-                                </ul>
-                            </li>
-                        <?php endif; ?>
-
                         <?php if (esPestanaPermitida('Ficha_Medica', $roles_permitidos, $rol_usuario)) : ?>
                             <li class="nav-item ">
                                 <a href="#" class="nav-link active">
@@ -282,6 +254,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         <?php endif; ?>
 
+                        <?php if (esPestanaPermitida('Facturas', $roles_permitidos, $rol_usuario)) : ?>
+                            <li class="nav-item ">
+                                <a href="#" class="nav-link active">
+                                    <i class='fas fa-file-invoice'></i>
+                                    <p>
+                                        Facturas
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="<?php echo $URL; ?>/admin/facturas/show_factura.php" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Ver Facturas</p>
+                                        </a>
+                                    </li>
+                                    <?php if (esIngresoPermitido('Facturas', $ingresos_permitidos, $rol_usuario)) : ?>
+                                        <li class="nav-item">
+                                            <a href="<?php echo $URL; ?>/admin/mascotas/agregar_mascota.php" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Ingresar Facturas</p>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </li>
+                        <?php endif; ?>
+
 
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">
@@ -303,7 +303,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <?php endif; ?>
                             <?php if (esIngresoPermitido('Citas', $ingresos_permitidos, $rol_usuario)) : ?>
                                 <ul class="nav nav-treeview">
-
                                     <li class="nav-item">
                                         <a href="<?php echo $URL; ?>/admin/citas/index.php" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
