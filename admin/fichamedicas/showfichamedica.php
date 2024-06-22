@@ -108,11 +108,11 @@ if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) 
                                 <thead>
                                     <tr class="text-center">
                                         <th>ID Ficha</th>
-                                        <th>Nombre Mascota</th>
+                                        <th>Especialista</th>
+                                        <th>Mascota</th>
                                         <th>Tipo Mascota</th>
-                                        <th>Especialista Nombre</th>
-                                        <th>Nombre cliente</th>
-                                        <th>Rut Cliente</th>
+                                        <th>Nombre</th>
+                                        <th>Rut</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -125,9 +125,9 @@ if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) 
                                     ?>
                                         <tr class="text-center">
                                             <td><?php echo $fichaMedica['ficha_id']; ?></td>
+                                            <td><?php echo $fichaMedica['especialista_nombre'] . " " . $fichaMedica['especialista_apellido_paterno']; ?></td>
                                             <td><?php echo $fichaMedica['mascota_nombre']; ?></td>
                                             <td><?php echo $fichaMedica['mascota_tipo']; ?></td>
-                                            <td><?php echo $fichaMedica['usuario_nombre'] . " " . $fichaMedica['usuario_apellido_paterno']; ?></td>
                                             <td><?php echo $fichaMedica['cliente_nombre'] . " " . $fichaMedica['cliente_apellido_paterno']; ?></td>
                                             <td><?php echo $fichaMedica['cliente_rut']; ?></td>
                                             <td>
