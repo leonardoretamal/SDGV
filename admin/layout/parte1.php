@@ -282,15 +282,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         <?php endif; ?>
 
-                        <?php if (esPestanaPermitida('Citas', $roles_permitidos, $rol_usuario)) : ?>
-                            <li class="nav-item ">
-                                <a href="#" class="nav-link active">
-                                    <i class="bi bi-calendar3"></i>
-                                    <p>
-                                        Citas
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
+
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link active">
+                                <i class="bi bi-calendar3"></i>
+                                <p>
+                                    Citas
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <?php if (esPestanaPermitida('Citas', $roles_permitidos, $rol_usuario)) : ?>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
                                         <a href="<?php echo $URL; ?>/admin/citas/show.php" class="nav-link">
@@ -299,18 +300,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </a>
                                     </li>
                                 </ul>
+                            <?php endif; ?>
+                            <?php if (esIngresoPermitido('Citas', $ingresos_permitidos, $rol_usuario)) : ?>
                                 <ul class="nav nav-treeview">
-                                    <?php if (esIngresoPermitido('Citas', $ingresos_permitidos, $rol_usuario)) : ?>
-                                        <li class="nav-item">
-                                            <a href="<?php echo $URL; ?>/admin/citas/index.php" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>ingresar citas</p>
-                                            </a>
-                                        </li>
-                                    <?php endif; ?>
+
+                                    <li class="nav-item">
+                                        <a href="<?php echo $URL; ?>/admin/citas/index.php" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>ingresar citas</p>
+                                        </a>
+                                    </li>
                                 </ul>
-                            </li>
-                        <?php endif; ?>
+                            <?php endif; ?>
+                        </li>
+
 
 
                         <li class="nav-item">

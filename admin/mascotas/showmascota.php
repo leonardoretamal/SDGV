@@ -2,6 +2,21 @@
 include("../../app/config.php"); //para tener conexión a la base de datos.
 include("../../admin/layout/parte1.php");
 
+$roles_permitidos = array(
+    'ADMINISTRADOR',
+    'Recepcionista',
+    'Veterinario'
+);
+
+// Verifica si el rol del usuario está permitido
+if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) {
+    // Si el rol del usuario no está permitido, cierra la sesión y redirige al login
+    session_unset(); // Elimina todas las variables de sesión
+    session_destroy(); // Destruye la sesión
+    header('Location: ' . $URL . '/login'); // Redirige al login
+    exit; // Detiene la ejecución del script
+}
+
 $id = $_GET['id'];
 include('../../app/controllers/mascotas_controllers/datos_mascota_controller.php');
 

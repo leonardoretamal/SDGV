@@ -9,7 +9,7 @@ $sentencia = $pdo->prepare("DELETE FROM tb_mascotas WHERE id = '$id' ");
 
 if($sentencia->execute()){
     session_start();
-    $_SESSION['mensaje'] = "Se elimino de la manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Se elimino la mascota";
     $_SESSION['icono'] = 'success';
     header('Location: '.$URL.'/admin/mascotas/show_mascota.php');
 }else{

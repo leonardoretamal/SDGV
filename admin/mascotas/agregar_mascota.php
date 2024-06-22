@@ -53,8 +53,8 @@ if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) 
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group"> <!-- propio de bootstrap -->
-                                    <label for="">edad</label>
-                                    <input type="number" name="edad" id="edad" class="form-control" maxlength="2">
+                                    <label for="">edad<b>*</b></label>
+                                    <input type="number" name="edad" id="edad" class="form-control" maxlength="2" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
