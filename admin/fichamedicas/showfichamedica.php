@@ -72,7 +72,9 @@ if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) 
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="show_fichamedica.php?id=<?php echo $id; ?>" class="btn btn-info"><i class="bi bi-eye-fill"></i> Ver</a>
-                                                <a href="delete_fichamedica.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
+                                                <?php if ($_SESSION['rol'] == 'ADMINISTRADOR') : ?>
+                                                    <a href="delete_fichamedica.php?id=<?php echo $id; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Eliminar</a>
+                                                <?php endif; ?>
                                             </div>
                                         </td>
                                     </tr>
