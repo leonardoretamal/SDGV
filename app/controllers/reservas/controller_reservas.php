@@ -13,6 +13,22 @@ $end = $fecha_cita;
 $color = "#16ADE3";
 $nombre_mascota = $_POST['nombre_mascota'];
 
+// Consulta para verificar si la mascota existe
+$sql_verificar_mascota = "SELECT id FROM tb_mascotas WHERE id = :mascota_id AND nombre = :nombre_mascota";
+$stmt_verificar = $pdo->prepare($sql_verificar_mascota);
+$stmt_verificar->bindParam(':mascota_id', $mascota_id, PDO::PARAM_INT);
+$stmt_verificar->bindParam(':nombre_mascota', $nombre_mascota, PDO::PARAM_STR);
+$stmt_verificar->execute();
+$mascota_existente = $stmt_verificar->fetch(PDO::FETCH_ASSOC);
+
+if (!$mascota_existente) {
+    session_start();
+    $_SESSION['mensaje'] = "error macota no existe en la base de datos.";
+    $_SESSION['icono'] = 'error';
+    header('Location: '.$URL.'/admin/citas/index.php');
+    exit; // Terminar el script para evitar la ejecución del resto del código
+}
+
 $sentencia = $pdo->prepare('INSERT INTO tb_citas
 (id_usuario,mascota_id,tipo_servicio,fecha_cita,hora_cita,title,start,end,color,nombre_mascota,fyh_creacion)
 VALUES ( :id_usuario,:mascota_id,:tipo_servicio,:fecha_cita,:hora_cita,:title,:start,:end,:color,:nombre_mascota,:fyh_creacion)');

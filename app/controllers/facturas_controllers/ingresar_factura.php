@@ -9,6 +9,24 @@ $operacion = $_POST["operacion"];
 $valor_operacion = !empty($_POST["valor_operacion"]) ? $_POST["valor_operacion"] : 0;
 $total = $_POST["total"];
 
+
+// Verificar si el cliente_id existe en la tabla tb_usuarios
+$sql_verificar_usuario = "SELECT id FROM tb_usuarios WHERE id = :cliente_id";
+$stmt_verificar = $pdo->prepare($sql_verificar_usuario);
+$stmt_verificar->bindParam(':cliente_id', $cliente_id, PDO::PARAM_INT);
+$stmt_verificar->execute();
+$usuario_existente = $stmt_verificar->fetch(PDO::FETCH_ASSOC);
+
+
+if (!$usuario_existente) {
+    session_start();
+    $_SESSION['mensaje'] = "El ID de cliente proporcionado no existe en la base de datos.";
+    $_SESSION['icono'] = 'error';
+    header('Location: ' . $URL . '/admin/facturas/show_factura.php');
+    exit();
+}
+
+
 // Verificar si es el mismo registro 
 $sql = "SELECT * FROM tb_facturas WHERE cliente_id = :cliente_id AND fecha = :fecha AND total = :total";
 $query = $pdo->prepare($sql);
