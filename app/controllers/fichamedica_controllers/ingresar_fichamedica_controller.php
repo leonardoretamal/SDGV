@@ -42,7 +42,7 @@ if (!$especialista_exists) {
 
 // Preparar y ejecutar la inserción en la base de datos
 $sentencia = $pdo->prepare("INSERT INTO tb_fichamedica (mascota_id,diagnostico,tratamiento,fecha,especialista_id, fyf_creacion) 
-                                    values (:id, :mascota_id,:diagnostico, :tratamiento, :fecha, :especialista_id ,:fyf_creacion)");
+                                    values (:mascota_id,:diagnostico, :tratamiento, :fecha, :especialista_id ,:fyf_creacion)");
 
 $sentencia->bindParam(':mascota_id', $mascota_id);
 $sentencia->bindParam(':diagnostico', $diagnostico);
@@ -64,3 +64,5 @@ if ($sentencia->execute()) {
     header('Location: ' . $URL . '/admin/fichamedicas/agregar_fichamedica.php');
     exit();
 }
+
+
