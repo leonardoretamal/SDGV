@@ -1,0 +1,59 @@
+/* Tipografia */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Colores */
+
+    --blue-ligth: #f1fafe;
+    --blue-ligth-two: #e1f3fd;
+    --blue-ligth-theer: #bce8fb;
+    --blue-ligth-four: #82d7f7;
+    --blue-ligth-five: #3fc2f1;
+    --blue-default: #16ade3;
+    --blue-dark: #098bc0;
+    --blue-dark-two: #096e9b;
+    --blue-dark-theer: #0c5d80;
+    --blue-dark-four: #104d6a;
+    --blue-dark-five: #0a3247;
+
+
+    /* Tipografia */
+
+    --font-main: "Montserrat", Helvetica;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-main);
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+input {
+    font: inherit;
+}
+
+
+
+
+
+
+/* Boton disable al momento de recargar la pagina del captcha */
+
+#btn:disabled {
+    filter: grayscale(1);
+    cursor: default;
+}

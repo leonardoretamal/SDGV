@@ -8,466 +8,146 @@ include("app/controllers/reCaptcha/keys.php");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inicio SDGV</title>
-    <!-- framework bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/diable.css">
-    <!-- iconos de boostrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>SDGV - Inicio</title>
+    <link rel="shortcut icon" href="private/img/logo/huella.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/global.css">
+    <link rel="stylesheet" href="public/css/navbar/navbar.css">
+    <link rel="stylesheet" href="public/css/header/header.css">
+    <link rel="stylesheet" href="public/css/main/main.css">
+    <script src="https://kit.fontawesome.com/0b8bc254d8.js" crossorigin="anonymous"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $claves['publica']; ?>"></script>
-    <!-- JQUERY -->
-    <script src="public/js/jquery-3.7.1.min.js"></script>
 </head>
 
-<body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-primary ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="private/img/logo1.png" alt="logoSDGV" width="60" height="60">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon "></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active fs-6 text-lg text-white" aria-current="page" href="/sdgv"><i class="bi bi-house-fill"></i>
-                            Inicio</a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fs-4 text-lg text-white" href="login/index.php"><i class="bi bi-calendar3"></i> Citas</a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                    <li><a class="nav-link text-lg text-white" href="login/index.php"><i class="bi bi-box-arrow-right"></i>
-                            Iniciar Sesion </a></li>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<body> 
+    <nav class="nav">
+        <section class="nav__logo">
+            <img src="private/img/logo/Logo_SDGV-removebg.png" alt="logo-SDGV">
+        </section>
+        <section class="nav__links">
+            <a href="#" class="nav__links_link">Citas</i></a>
+            <a href="#testimonio" class="nav__links_link">Testimonios</a>
+            <a href="#" class="nav__links_link">Acceso Colaboradores</a>
+        </section>
+        <section class="nav__buttons">
+            <button class="nav__buttons_button">Iniciar sesión</button>
+            <button class="nav__buttons_button"><i class="fa-solid fa-moon"></i></button>
+        </section>
     </nav>
-    <section>
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" id="inicio">
-                    <img src="private/img/gato2.jpg" class="d-block w-100 img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-4 fw-semibold text-center" style="background-color:rgba(30,124,194, .5); border-radius: 10px; padding: 10px;">
-                            Bienvenido al refugio de amor y cuidado para tus
-                            mascotas. En nuestra clínica veterinaria, cada ladrido, ronroneo y cola que menea es
-                            recibido con cariño y atención experta. Descubre cómo nuestro equipo de profesionales
-                            comprometidos y
-                            amantes de los animales puede hacer que la salud y
-                            la felicidad de tu mascota sean su prioridad número uno </p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="private/img/dog-8434227_1280.jpg" class="d-block w-100 img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-4 fw-semibold text-center" style="background-color:rgba(30,124,194, .5); border-radius: 10px; padding: 10px;">
-                            Cuidando a los amigos peludos de tu familia desde hace años. En nuestra clínica
-                            veterinaria, nos enorgullecemos de ofrecer un ambiente cálido y acogedor donde las mascotas
-                            son tratadas con compasión y respeto. Desde chequeos de rutina hasta emergencias médicas,
-                            confía en nosotros para proporcionar atención veterinaria excepcional en cada paso del
-                            camino. </p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="private/img/dog-8434228_1280.jpg" class="d-block w-100 img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p id="bnr-1" class="fs-4 fw-semibold text-center" style="background-color:rgba(30,124,194, .5); border-radius: 10px; padding: 10px; ">¡Reserva
-                            tu cita ahora mismo y asegura tu lugar para una
-                            experiencia única!
-                            Nuestro equipo está listo para atenderte y proporcionarte el mejor servicio posible. No
-                            esperes más, reserva tu cita hoy. </p>
-                        <a href="login/index.php" class="btn btn-lg" style="background-color: #1e7cc0;">Reservar Cita</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
-        </div>
-    </section>
-    <section class="info">
-        <div container>
-            <div class="row">
-                <div class="col-md-5 col-sm-12 container-sm"><img src="private/img/gatoperro.jpg" width="100%"></div>
-                <div class="col-md-6 col-sm-12 conta">
-                    <div class="container-sm">
-                        <br><br><br>
-                        <h1 class="text-center" id="sobre nosotros">Acerca de <span class="text-primary">nuestra veterinaria</span></h1>
-                        <p class="text-center">Bienvenido a Veterinaria GVPT, tu destino confiable para el cuidado
-                            integral de tus mascotas.
-                            En
-                            Veterinaria GVPT, nos enorgullecemos de ofrecer servicios veterinarios de alta calidad
-                            respaldados
-                            por un equipo dedicado de profesionales apasionados por el bienestar animal.</p>
 
-                        <p class="text-center">Nuestra clínica está equipada con las últimas tecnologías y nuestras
-                            instalaciones están
-                            diseñadas
-                            pensando en la comodidad y seguridad de tus mascotas. Desde chequeos de rutina hasta
-                            tratamientos
-                            especializados, estamos aquí para proporcionar el mejor cuidado para tus amigos peludos.</p>
+    <header class="header">
+        <section class="header__container_bienvenida">
+            <article class="header__container_mensaje">
+                <span class="header__container_text--hombre">En nuestra Veterinaria</span> 
+                <h3 class="header__container_text">
+                <br> Cada mascota recibe cuidados con <span class="header__container_frase">amor</span> y 
+                    <span class="header__container_frase">dedicación</span> porque para nosotros, 
+                    su salud y felicidad es lo mas importante
+                </h3>
 
-                        <p class="text-center">En Veterinaria GVPT, entendemos que cada mascota es única, por lo que nos
-                            comprometemos a
-                            brindar
-                            un
-                            enfoque personalizado y compasivo en cada consulta. Nos esforzamos por establecer relaciones
-                            sólidas
-                            con nuestros clientes y sus mascotas, basadas en la confianza y el respeto mutuo.</p>
+                <button class="nav__buttons_button">Conocenos</i></button>
+            </article>
+        </section>
+        <section class="header__container_photo">
+            <article class="header__container_images">
+                <img class="header__container_images_image" loading="lazy" src="private/img/gatoperro.jpg" alt="client">
+            </article>
+        </section>
+    </header>
 
-                        <p class="text-center">En Veterinaria GVPT, nos preocupamos profundamente por el vínculo entre
-                            humanos y animales, y
-                            nos
-                            comprometemos a hacer todo lo posible para mantener a tus mascotas felices y saludables en
-                            cada
-                            etapa de sus vidas. Confía en nosotros para el cuidado de tus seres queridos de cuatro
-                            patas.
-                            ¡Esperamos verte pronto en nuestra clínica!</p>
+    <main class="main">
+        <section class="main__testimonios" id="testimonio">
+            <h3 class="main__testimonios_text">Testimonios</h3>
 
-                        <a href="#"></a>
+            <section class="main__testimonio_container">
+                <article class="main__testimonio_card">
+                    <img class="main__testimonio_card_img" loading="lazy" src="private/img/clientes/perrito1.jpg" alt="testimonio-client">
+                    <div class="main__testimonios_texts">
+                        <span class="main_testimonios_name">Leon</span>
+                        <span class="main__testimonios_servicios">Cirugia estomacal <i class="fa-solid fa-paw icon"></i></span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="our-services">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <br><br>
-                    <h1> <span class="spanAzul" id="Opinion expertos">Opinion expertos</span></h1>
-                    <br><br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 zoomP"> <!-- usamos 12 columnas por ende 3*4 -->
-                    <div class="card"><!-- 17 rm para que no se solapen -->
-                        <img src="private/img/veterinaria1.jpg" height="400px" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">javiera torrez</h5>
-                            <p class="card-text">es una gran parte de nuestro grupo de trabajo </p>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <div class="col-md-3 zoomP">
-                    <div class="card">
-                        <img src="private/img/veterinaria2.avif" height="400px" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">antonela garcia</h5>
-                            <p class="card-text">siempre atiende a todos con una gran paciencia</p>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <div class="col-md-3 zoomP">
-                    <div class="card">
-                        <img src="private/img/veterinaria3.jpg" height="400px" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">belen gutierrez</h5>
-                            <p class="card-text">todas las mascotas aman la forma de cuidar de todos</p>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <div class="col-md-3 zoomP ">
-                    <img src="private/img/publicacion-redes-sociales-promocion-adopcion-animales-adopt-flyer-texto-save-life-perros-divertidos_255592-891.avif" width="100%" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <br>
-    <section class="gallery">
-        <div class="container">
-            <br><br>
-            <h1 id="galeria">Galeria</h1>
-            <br><br>
-            <div class="row">
-                <div class="col-md-4 zoomP"> <!-- los 12 los partimos para 2 -->
-                    <img src="private/img/perro1.jpg" width="100%" height="250px" alt="">
-                    <br><br>
-                </div>
-                <div class="col-md-8 zoomP">
-                    <img src="private/img/perro2.jpg" width="100%" height="250px" alt="">
-                    <br><br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 zoomP">
-                    <img src="private/img/gato1.jpg" width="100%" height="250px" alt="">
-                    <br><br>
-                </div>
-                <div class="col-md-4 zoomP">
-                    <img src="private/img/cuye1.jpg" width="100%" height="250px" alt="">
-                    <br><br>
-                </div>
-                <div class="col-md-4 zoomP">
-                    <img src="private/img/gato3.avif" width="100%" height="250px" alt="">
-                    <br><br>
-                </div>
-            </div>
-        </div>
-        <br><br>
-    </section>
-    <section class="clients">
-        <div class="container">
-            <br><br>
-            <h1 class="clientsH1" id="Testimonios">Testimonios de clientes</h1>
-            <br><br>
-            <div class="row">
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <img src="private/img/clientes/cliente1.avif" style="width: 230px; height: 250px;">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Laura García</h5>
-                                            <p class="card-text">Atención excepcional para nuestras mascotas. Siempre
-                                                nos sentimos
-                                                tranquilos y bienvenidos. ¡Gracias por ser tan dedicados!</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <img src="private/img/clientes/cliente2.jpg" height="250px" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ana Martínez.</h5>
-                                            <p class="card-text">Siempre nos sentimos cuidados y respetados. Personal
-                                                amable y conocedor.
-                                                Definitivamente nuestra primera opción para la atención veterinaria.</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <img src="private/img/clientes/cliente3.jpg" height="250px" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Carlos Rodríguez</h5>
-                                            <p class="card-text">Increíblemente comprensivos y atentos durante el
-                                                tratamiento de mi mascota.
-                                                Profesionales apasionados y dedicados. ¡Los recomendaría a todos!</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <img src="private/img/clientes/cliente4.jpg" style="width: 230px; height: 250px;">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Marta López</h5>
-                                            <p class="card-text">Verdadero amor por los animales y un compromiso
-                                                inquebrantable con su bienestar.
-                                                Impresionados por su profesionalismo y cuidado personalizado.</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <img src="private/img/clientes/cliente5.jpg" style="width: 230px; height: 250px;">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Diego Sánchez</h5>
-                                            <p class="card-text">Fundamentales en el cuidado de nuestras mascotas.
-                                                Tratamientos efectivos y consejos útiles para mantenerlas saludables.
-                                                Simplemente los mejores.</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <img src="private/img/clientes/cliente6.jpg" style="width: 230px; height: 250px;">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Javier González</h5>
-                                            <p class="card-text">Excepcional desde la primera llamada telefónica hasta
-                                                el seguimiento posterior a la consulta.
-                                                Enfoque compasivo y experto que marca la diferencia.</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <img src="private/img/clientes/cliente7.avif" style="width: 240px; height: 250px;">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Camila Catalan</h5>
-                                            <p class="card-text">El equipo de esta veterinaria es excepcional.
-                                                Siempre se toman el tiempo para explicar los tratamientos y brindar el
-                                                mejor cuidado posible a nuestras mascotas.
-                                                ¡Totalmente recomendado!</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <img src="private/img/clientes/cliente8.avif" height="250px" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Josefa Claveria</h5>
-                                            <p class="card-text">Increíble atención veterinaria.
-                                                Siempre nos hacen sentir como en casa y nuestras mascotas reciben el
-                                                mejor cuidado.
-                                                ¡Gracias por ser tan dedicados y compasivos</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <img src="private/img/clientes/cliente9.jpg" height="250px" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Aylin Hernandez</h5>
-                                            <p class="card-text">No podríamos estar más felices con el servicio que
-                                                recibimos aquí.
-                                                El personal es amable y atento, y siempre están dispuestos a responder
-                                                nuestras preguntas.
-                                                ¡Gracias por cuidar tan bien de nuestras mascotas</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <br><br>
-    </section>
-    <section class="maps">
-        <div class="container-sm">
-            <h1 class="mapsH1">Encuentranos aquí</h1>
-            <br><br>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.0324460694465!2d-70.65218772521408!3d-33.44846119740874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c50bb33cf719%3A0x5b3aea7806cdf0b8!2sInstituto%20Profesional%20Los%20Leones!5e0!3m2!1ses-419!2scl!4v1712097849874!5m2!1ses-419!2scl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <br><br>
-    </section>
-    <section class="contactos">
-        <div class="container">
-            <br>
-            <h1 class="contactH1">Contactanos</h1>
-            <br>
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <div class="card border border-5 text-primary">
-                        <div class="card-header bg-primary p-2 text-dark bg-opacity-10">
-                            <center><b>Escribenos aqui</b></center>
-                        </div>
-                        <div class="card-body">
-                            <form class="" action="app/controllers/reCaptcha/verificado.php" method="post">
-                                <?php
-                                if (isset($_GET['error'])) {
-                                    $error = $_GET['error'];
-                                    echo "<p class='error_captcha'>$error</p>";
-                                }
-                                ?>
-                                <div class="form-group">
-                                    <label for=""><b>Nombre</b></label>
-                                    <input type="text" name="nombre" placeholder="Escribe tu nombre..." class="form-control">
-                                    <br>
-                                </div>
-                                <div class="form-group">
-                                    <label for=""><b>Correo</b></label>
-                                    <input type="text" name="correo" placeholder="Escribe tu correo..." class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for=""><b>Mensaje</b></label>
-                                    <textarea name="mensaje" id="" cols="30" rows="5" class="form-control"></textarea>
-                                </div>
-                                <hr>
-                                <input type="hidden" id="token" name="token">
-                                <div class="d-grid gap-2">
-                                    <button id="btn" class="btn btn-outline-primary" type="submit" disabled>Enviar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-        </div>
-        <br><br>
-    </section>
-    <footer class="container-fluid footer" style="background-color: #1e7cc0; color: white;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <center><img src="https://cdn-icons-png.freepik.com/512/11810/11810009.png" width="40%" alt="">
-                    </center>
-                </div>
-                <div class="col-md-4">
-                    <br>
-                    <h3>Sistema de veterinario</h3>
-                    <p>
-                        <a href="#inicio" style="color: white;"><u>inicio</u></a><br>
-                        <a href="#sobre nosotros" style="color: white;"><u>Sobre nosotros</u></a><br>
-                        <a href="#galeria" style="color: white;"><u>Galeria</u></a><br>
-                        <a href="#Testimonios" style="color: white;"><u>Testimonios</u></a><br>
-                        <a href="#Opinion expertos" style="color: white;" u>Opinion experto</u></a>
-
+                    <p class="main__testimonio_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ipsam totam,
+                        recusandae quidem, magni velit rem necessitatibus 
+                        magnam odit laboriosam architecto. Iste alias, provident debitis quod autem 
+                        cupiditate magnam aliquam?m
                     </p>
-                </div>
-                <div class="col-md-4">
-                    <br><br><br>
-                    <b><i class="bi bi-person-badge-fill"></i> Propietario:</b> SDGV <br>
-                    <b><i class="bi bi-whatsapp"></i> Contacto: </b> +56911111111 <br>
-                    <b><i class="bi bi-envelope-at"></i> Correo electronico: </b> sdgv@gmail.com
+                </article>
 
-                </div>
-            </div>
-        </div>
+                <article class="main__testimonio_card">
+                    <img class="main__testimonio_card_img" loading="lazy" src="private/img/clientes/gato1.jpg" alt="testimonio-client">
+                    <div class="main__testimonios_texts">
+                        <span class="main_testimonios_name">Michell</span>
+                        <span class="main__testimonios_servicios">Colocación de chip <i class="fa-solid fa-microchip icon"></i></span>
+                    </div>
+                    <p class="main__testimonio_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ipsam totam,
+                        recusandae quidem, magni velit rem necessitatibus 
+                        magnam odit laboriosam architecto. Iste alias, provident debitis quod autem 
+                        cupiditate magnam aliquam?m
+                    </p>
+                </article>
+
+                <article class="main__testimonio_card">
+                    <img class="main__testimonio_card_img" loading="lazy" src="private/img/clientes/perrito3.jpg" alt="testimonio-client">
+                    <div class="main__testimonios_texts">
+                        <span class="main_testimonios_name">Vegeta</span>
+                        <span class="main__testimonios_servicios">Mi primera vacuna <i class="fa-solid fa-syringe icon"></i></span>
+                    </div>
+                    <p class="main__testimonio_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ipsam totam,
+                        recusandae quidem, magni velit rem necessitatibus 
+                        magnam odit laboriosam architecto. Iste alias, provident debitis quod autem 
+                        cupiditate magnam aliquam?m
+                    </p>
+                </article>
+            </section>
+                <h3 class="main__testimonios_text main__testimonios_text--ubi">
+                    ¿Eres un usuario nuevo? <span class="main__testimonios_text_gradient">Acercate a nuestra sucursal</span> y ¡regístrate!
+                </h3>
+            </section>
+        </section>
+        <section class="main__ubicacion">
+            <h3 class="main__ubicacion_text">Ubicación y Contacto</h3>
+            <section class="main__ubicacion_container">
+                <article class="main__ubicacion_info">
+                    <h3 class="main__ubicacion_infoText">SDGV</h3>
+
+                    <form action="#" class="main__ubicacion_form">
+                        <h2 class="main__ubicacion_formTitle">Contactanos</h2>
+                        <p class="main__ubicacion_formText">¡Si tienes alguna pregunta no dudes en escribirnos!</p>
+
+                        <div class="main__ubicacion_formInputs">
+                            <label class="main__ubicacion_formLabel">
+                                <input type="text" placeholder=" " class="main__ubicacion_input">
+                                <span class="main__ubicacion_name">Ingresa tu nombre</span>
+                            </label>
+
+                            <label class="main__ubicacion_formLabel">
+                                <input type="email" placeholder=" " class="main__ubicacion_input">
+                                <span class="main__ubicacion_name">Ingresa tu correo</span>
+                            </label>
+
+                            <label class="main__ubicacion_formLabel">
+                                <textarea name="" id="" placeholder=" " class="main__ubicacion_input"></textarea>
+                                <span class="main__ubicacion_name">Comentario</span>
+                            </label>
+                        </div>
+
+                        <input type="submit" value="Enviar" class="main__ubicacion_formBtn">
+                    </form>
+                </article>
+
+                <article class="main__ubicacion_maps">
+                    <iframe class="main__ubicacion_mapa" src="<?php echo $mapa['URL']; ?>" width="500" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+
     </footer>
-    <div class="container-fluid" style="background-color:black ; color: white;">
-        <p style="text-align: center;">Todos los derechos reservados © 2024 SDGV.</p>
-    </div>
 
 
     <!-- ReCaptcha -->
-
     <!-- <script src="public/js/reCAPTCHA.js"></script> -->
-
     <script>
         grecaptcha.ready(() => {
             grecaptcha.execute('<?php echo $claves['publica']; ?>', {
@@ -483,7 +163,7 @@ include("app/controllers/reCaptcha/keys.php");
         })
     </script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var nav = document.querySelector('nav');
 
         window.addEventListener('scroll', function() {
@@ -493,8 +173,7 @@ include("app/controllers/reCaptcha/keys.php");
                 nav.classList.remove('bg-primary', 'bg-gradient', 'shadow');
             }
         });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </script> -->
 </body>
 
 </html>
