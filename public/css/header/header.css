@@ -1,0 +1,87 @@
+@import url("/public/css/global.css");
+
+.header {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 1rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header__container_bienvenida {
+    background: linear-gradient(90deg, #00aaff26, transparent);
+    padding: 3rem 5rem;
+    border-radius: 30px 80px;
+    width: 65%;
+
+    .header__container_mensaje {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+
+        .header__container_text--hombre {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--blue-dark-five);
+
+        }
+
+        .header__container_text {
+            font-size: 2.5rem;
+            padding-right: 2rem;
+            color: var(--blue-dark-five);
+            position: relative;
+            bottom: 4rem;
+            font-weight: 700;
+            
+            .header__container_frase {
+                color: var(--blue-default);
+                text-transform: uppercase;
+            }
+        }
+
+        .nav__buttons_button {
+            /* margin: 0 auto; */
+            width: 14rem;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: 540;
+            display: inline-block;
+            /* padding: 12px 14px; */
+            font-size: 1.3rem;
+            background: var(--blue-default);
+            color: var(--blue-ligth);
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            box-shadow: 0px 3px 10px rgba(119, 176, 250, 0.4);
+            transition: all .3s ease;
+        }
+        
+        .nav__buttons_button:hover {
+            background: var(--blue-ligth);
+            color: var(--blue-dark-five);
+        }
+    }
+}
+
+.header__container_photo {
+    width: 35%;
+    height: 600px;
+    border-radius: 30px 80px;
+
+    .header__container_images {
+        width: 100%;
+    }
+
+    .header__container_images_image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px 80px;
+        mask-image: linear-gradient(
+            rgb(52, 112, 155) 80%, transparent
+        );
+    }
+}

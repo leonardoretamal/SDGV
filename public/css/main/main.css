@@ -1,0 +1,210 @@
+@import url("/public/css/global.css");
+
+.main {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 1rem;
+}
+
+/* Estilos seccion testimonios */
+
+.main__testimonios_text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--blue-dark-five);
+    padding-left: 5rem;
+}
+
+.main__testimonios_text--ubi {
+    text-align: center;
+    font-size: 1.6rem;
+    padding-top: 5rem;
+
+    .main__testimonios_text_gradient {
+        background: linear-gradient(90deg, var(--blue-ligth-four), var(--blue-ligth-theer));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.main__testimonio_container {
+    padding: 3rem 5rem;
+    display: flex;
+    gap: 1.5rem;
+
+    .main__testimonio_card {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgb(175 175 175 / 50%);
+        transition: all .4s ease;
+
+        .main__testimonio_card_img {
+            margin: 0 auto;
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .main__testimonios_texts {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            align-items: center;
+
+            .main_testimonios_name {
+                font-weight: 700;
+                color: var(--blue-dark-five);
+            }
+
+            .main__testimonios_servicios {
+                display: inline-block;
+                font-weight: 400;
+                background: linear-gradient(90deg, var(--blue-ligth-theer), var(--blue-ligth-two));
+                border-radius: 0.5rem;
+                padding: 7px;
+                color: var(--blue-dark-five);
+
+                .icon {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+
+        .main__testimonio_p {
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            line-height: 23px;
+            color: var(--blue-dark-five);
+        }
+    }
+
+    .main__testimonio_card:hover {
+        transform: translateY(-0.2rem);
+        border: 1px solid rgba(105, 187, 231, 0.5);
+        box-shadow: 0px 3px 10px rgba(119, 176, 250, 0.226);
+    }
+}
+
+/* Estilos seccion ubicación */
+
+.main__ubicacion {
+    margin-top: 7rem;
+}
+
+.main__ubicacion_container {
+    display: flex;
+    gap: 1.5rem;
+    padding: 3rem 5rem;
+}
+
+.main__ubicacion_info {
+    background: linear-gradient(90deg, #00aaff26, transparent);
+    padding: 2rem 4rem;
+    border-radius: 30px 80px;
+
+    .main__ubicacion_infoText {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: 500;
+        background: linear-gradient(90deg, var(--blue-ligth-four), var(--blue-ligth-theer));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .main__ubicacion_form {
+        padding: 1rem;
+        background: #ffffff;
+        border-radius: 0.5rem;
+
+        .main__ubicacion_formTitle {
+            color: #0a3247;
+            font-size: 1.6rem;
+        }
+
+        .main__ubicacion_formText {
+            color: #233d4c;
+            margin-top: .7rem;
+        }
+
+        .main__ubicacion_formInputs {
+            display: grid;
+            margin: 2rem 0 1.5rem;
+            gap: 1.5rem;
+            color: #233d4c;
+
+            .main__ubicacion_formLabel {
+                width: 100%;
+                display: grid;
+                grid-template-areas: "input";
+
+                .main__ubicacion_input {
+                    grid-area: input;
+                    width: 100%;
+                    border-radius: 0.5rem;
+                    border: 1px solid #d7d7d0;
+                    padding: .7rem 1.5rem;
+                    color: #233d4c;
+                }
+
+                .main__ubicacion_name {
+                    grid-area: input;
+                    z-index: 100;
+                    width: 170px;
+                    height: 100%;
+                    margin-left: 1rem;
+                    padding: 0 0.5rem;
+                    display: flex;
+                    align-items: center;
+                    transform-origin: left center;
+                    transition: transform .3s;
+                }
+
+                .main__ubicacion_input:focus + .main__ubicacion_name,
+                .main__ubicacion_input:not(:placeholder-shown) + .main__ubicacion_name
+                {
+                    background: white;
+                    transform: translateY(-50%) scale(.7);
+                }
+            }
+        }
+    }
+
+    .main__ubicacion_formBtn {
+        padding: 12px 18px;
+        border-radius: 0.5rem;
+        border: none;
+        background: #16ade3;
+        color: #f1fafe;
+        margin-top: 1rem;
+        transition: background .3s ease;
+        cursor: pointer;
+    }
+
+    .main__ubicacion_formBtn:hover {
+        background: var(--blue-dark);
+    }
+    
+}
+
+.main__ubicacion_text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--blue-dark-five);
+    padding-left: 5rem;
+}
+
+.main__ubicacion_maps {
+    margin-left: auto;
+    background: linear-gradient(280deg, #00aaff26, transparent);
+    padding: 2rem;
+    border-radius: 30px 80px;
+
+    .main__ubicacion_mapa{
+        border: none;
+        border-radius: 30px 80px;
+    }
+}

@@ -1,9 +1,0 @@
-#btn:disabled {
-    filter: grayscale(1);
-    cursor: default;
-}
-
-.error_captcha {
-    color: darkred;
-
-}
