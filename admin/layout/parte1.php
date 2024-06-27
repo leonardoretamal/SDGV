@@ -19,7 +19,7 @@ $apellido_paterno = isset($_SESSION['apellido_paterno']) ? $_SESSION['apellido_p
 $roles_permitidos = array(
     'ADMINISTRADOR' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
     'Recepcionista' => array('Usuarios', 'Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
-    'Veterinario' => array('Suministros', 'Mascotas', 'Facturas', 'Ficha_Medica', 'Citas'),
+    'Veterinario' => array('Suministros', 'Mascotas', 'Ficha_Medica', 'Citas'),
     'Cliente' => array('Mascotas','Facturas', 'Ficha_Medica','Citas')
 );
 

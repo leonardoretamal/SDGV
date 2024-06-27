@@ -52,17 +52,17 @@ if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) 
                             <tbody>
                                 <?php
                                 $contador = 0;
-                                foreach ($citas as $cita) {
+                                foreach ($reservas as $reserva) {
                                     $contador++;
                                 ?>
                                     <tr class="text-center">
                                         <td><?php echo $contador; ?></td>
-                                        <td><?php echo $cita['id']; ?></td>
-                                        <td><?php echo $cita['id_usuario']; ?></td>
-                                        <td><?php echo $cita['mascota_id']; ?></td>
-                                        <td><?php echo $cita['tipo_servicio']; ?></td>
-                                        <td><?php echo $cita['fecha_cita']; ?></td>
-                                        <td><?php echo $cita['hora_cita']; ?></td>
+                                        <td><?php echo $reserva['id']; ?></td>
+                                        <td><?php echo $reserva['id_usuario']; ?></td>
+                                        <td><?php echo $reserva['mascota_id']; ?></td>
+                                        <td><?php echo $reserva['tipo_servicio']; ?></td>
+                                        <td><?php echo $reserva['fecha_cita']; ?></td>
+                                        <td><?php echo $reserva['hora_cita']; ?></td>
                                     </tr>
                                 <?php
                                 }
