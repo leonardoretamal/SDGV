@@ -94,7 +94,7 @@ if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) 
                         <div class="row justify-content-center">
                             <div class="col-md-12 text-center">
                                 <a href="../../admin/fichamedicas/showfichamedica.php" class="btn btn-secondary">Cancelar</a>
-                                <button type="button" class="btn btn-primary" id="abrirModalTotal">Registrar Ficha Medica</button>
+                                <button type="button" class="btn btn-primary" id="abrirModalTotal">Ingresar Factura</button>
                             </div>
                         </div>
                     </form>
