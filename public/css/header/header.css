@@ -28,16 +28,17 @@
         }
 
         .header__container_text {
-            font-size: 2.5rem;
+            font-size: 2.1rem;
             padding-right: 2rem;
             color: var(--blue-dark-five);
             position: relative;
             bottom: 4rem;
-            font-weight: 700;
+            font-weight: 500;
             
             .header__container_frase {
                 color: var(--blue-default);
                 text-transform: uppercase;
+                font-weight: 700;
             }
         }
 
@@ -49,7 +50,7 @@
             font-weight: 540;
             display: inline-block;
             /* padding: 12px 14px; */
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             background: var(--blue-default);
             color: var(--blue-ligth);
             border: none;
@@ -68,7 +69,7 @@
 
 .header__container_photo {
     width: 35%;
-    height: 600px;
+    height: 700px;
     border-radius: 30px 80px;
 
     .header__container_images {

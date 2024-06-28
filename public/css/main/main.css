@@ -4,6 +4,7 @@
     width: 100%;
     overflow: hidden;
     padding: 2rem 1rem;
+    margin-top: 3rem;
 }
 
 /* Estilos seccion testimonios */
@@ -148,6 +149,7 @@
                     border: 1px solid #d7d7d0;
                     padding: .7rem 1.5rem;
                     color: #233d4c;
+                    cursor: pointer;
                 }
 
                 .main__ubicacion_name {
@@ -167,7 +169,13 @@
                 .main__ubicacion_input:not(:placeholder-shown) + .main__ubicacion_name
                 {
                     background: white;
-                    transform: translateY(-50%) scale(.7);
+                    transform: translateY(-50%) scale(.4);
+                    
+                    
+                }
+
+                .textArea {
+                    resize: none;
                 }
             }
         }
@@ -206,5 +214,106 @@
     .main__ubicacion_mapa{
         border: none;
         border-radius: 30px 80px;
+    }
+}
+
+
+/* Estilos del Footer */
+
+.footer {
+    margin-top: 3rem;
+    background: linear-gradient(90deg, #00aaff0e, transparent);
+}
+
+.footer__container {
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    .footer__info {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 7rem;
+
+        .footer__infos {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+
+            .footer__img {
+                width: 200px;
+                height: 65px;
+                object-fit: cover;
+            }
+
+            .footer__mensaje {
+                font-size: 14px;
+                color: #104d6a;
+                font-weight: 500;
+                width: 70%;
+            }
+
+            .footer__text {
+                font-size: 14px;
+                font-weight: 500;
+                color: #104d6a;
+            }
+            
+            .footer_ancors {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                margin-top: 3rem;
+
+                .footer__ancor {
+                    font-size: 14px;
+                    color: #096e9bb3;
+                    transition: all .3s ease;
+                }
+
+                .footer__ancor:hover {
+                    transform: translateX(.1rem);
+                    color: var(--blue-dark-five);
+                }
+            }
+            
+        }
+    }
+
+    .footer__socials {
+        padding: 1rem 7rem;
+
+        .footer__btnSocials {
+            display: flex;
+            justify-content: space-between;
+
+            .footer__frase {
+                width: 60%;
+
+                .footer__parrafo {
+                    font-size: 14px;
+                    color: #104d6a;
+                }
+            }
+
+            .footer__rss {
+                .footer__link {
+                    display: inline-block;
+                    font-size: 1.3rem;
+                    color: #104d6a;
+                    margin-left: .8rem;
+                    transition: transform .3s ease;
+                }
+
+                .footer__link:hover {
+                    transform: translateY(-0.1rem);
+                }
+            }
+
+
+        }
     }
 }

@@ -24,12 +24,12 @@ include("app/controllers/reCaptcha/keys.php");
             <img src="private/img/logo/Logo_SDGV-removebg.png" alt="logo-SDGV">
         </section>
         <section class="nav__links">
-            <a href="#" class="nav__links_link">Citas</i></a>
+            <a href="login/index.php" class="nav__links_link">Citas</i></a>
             <a href="#testimonio" class="nav__links_link">Testimonios</a>
-            <a href="#" class="nav__links_link">Acceso Colaboradores</a>
+            <a href="login/index.php" class="nav__links_link">Acceso Colaboradores</a>
         </section>
         <section class="nav__buttons">
-            <button class="nav__buttons_button">Iniciar sesión</button>
+            <a href="login/index.php"><button class="nav__buttons_button">Iniciar sesión</button></a>
             <button class="nav__buttons_button"><i class="fa-solid fa-moon"></i></button>
         </section>
     </nav>
@@ -44,7 +44,7 @@ include("app/controllers/reCaptcha/keys.php");
                     su salud y felicidad es lo mas importante
                 </h3>
 
-                <button class="nav__buttons_button">Conocenos</i></button>
+                <a href="#ubicacion"><button class="nav__buttons_button">Conocenos</button></a>
             </article>
         </section>
         <section class="header__container_photo">
@@ -103,34 +103,41 @@ include("app/controllers/reCaptcha/keys.php");
                 </h3>
             </section>
         </section>
-        <section class="main__ubicacion">
+        <section class="main__ubicacion" id="ubicacion">
             <h3 class="main__ubicacion_text">Ubicación y Contacto</h3>
             <section class="main__ubicacion_container">
                 <article class="main__ubicacion_info">
                     <h3 class="main__ubicacion_infoText">SDGV</h3>
 
-                    <form action="#" class="main__ubicacion_form">
+                    <form id="form" action="app/controllers/emails/email.php" class="main__ubicacion_form" method="post">
+                    <?php
+                        if (isset($_GET['error'])) {
+                                $error = $_GET['error'];
+                                echo "<p class='error_captcha'>$error</p>";
+                        }
+                    ?>
                         <h2 class="main__ubicacion_formTitle">Contactanos</h2>
                         <p class="main__ubicacion_formText">¡Si tienes alguna pregunta no dudes en escribirnos!</p>
 
                         <div class="main__ubicacion_formInputs">
                             <label class="main__ubicacion_formLabel">
-                                <input type="text" placeholder=" " class="main__ubicacion_input">
+                                <input type="text" placeholder=" " id="name" name="nombre" class="main__ubicacion_input">
                                 <span class="main__ubicacion_name">Ingresa tu nombre</span>
                             </label>
 
                             <label class="main__ubicacion_formLabel">
-                                <input type="email" placeholder=" " class="main__ubicacion_input">
+                                <input type="email" placeholder=" " id="email" name="correo" class="main__ubicacion_input">
                                 <span class="main__ubicacion_name">Ingresa tu correo</span>
                             </label>
 
                             <label class="main__ubicacion_formLabel">
-                                <textarea name="" id="" placeholder=" " class="main__ubicacion_input"></textarea>
+                                <textarea id="message" placeholder=" " name="mensaje" class="main__ubicacion_input textArea"></textarea>
                                 <span class="main__ubicacion_name">Comentario</span>
                             </label>
                         </div>
-
-                        <input type="submit" value="Enviar" class="main__ubicacion_formBtn">
+                        
+                        <input type="hidden" id="token" name="token">
+                        <input type="submit" value="Enviar" class="main__ubicacion_formBtn" id="btn" disabled>
                     </form>
                 </article>
 
@@ -142,38 +149,85 @@ include("app/controllers/reCaptcha/keys.php");
     </main>
 
     <footer class="footer">
+        <div class="footer__container">
+            <section class="footer__info">
+                <article class="footer__infos">
+                    <img class="footer__img" src="private/img/logo/Logo_SDGV-removebg.png" alt="logo-SDGV">
+                    <p class="footer__mensaje">
+                        SDGV nace en 2024 para ayudar a tus mascotas en su salud.
+                    </p>
+                </article>
 
+                <article class="footer__infos">
+                    <h2 class="footer__text">Centro medico</h2>
+                    <div class="footer_ancors">
+                        <a class="footer__ancor" href="#">Contacto</a>
+                        <a class="footer__ancor" href="#">Ubicación</a>
+                        <a class="footer__ancor" href="#">Veterinarios</a>
+                    </div>
+                </article>
+
+                <article class="footer__infos">
+                    <h2 class="footer__text">Servicios</h2>
+                    <div class="footer_ancors">
+                        <a class="footer__ancor" href="#">Contacto</a>
+                        <a class="footer__ancor" href="#">Ubicación</a>
+                        <a class="footer__ancor" href="#">Veterinarios</a>
+                    </div>
+                    
+                </article>
+
+                <article class="footer__infos">
+                    <h2 class="footer__text">Soporte</h2>
+                    <div class="footer_ancors">
+                        <a class="footer__ancor" href="#">Contacto</a>
+                        <a class="footer__ancor" href="#">Ubicación</a>
+                        <a class="footer__ancor" href="#">Veterinarios</a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="footer__socials">
+                <article class="footer__btnSocials">
+                    <div class="footer__frase">
+                        <p class="footer__parrafo">
+                            @Creado para ayudar a tus mascotas en el momento donde más lo necesitan
+                        </p>
+                    </div>
+                    <div class="footer__rss">
+                        <a href="#" class="footer__link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer__link"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="footer__link"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="footer__link"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </article>
+            </section>
+        </div>
+        
     </footer>
 
 
     <!-- ReCaptcha -->
     <!-- <script src="public/js/reCAPTCHA.js"></script> -->
     <script>
-        grecaptcha.ready(() => {
-            grecaptcha.execute('<?php echo $claves['publica']; ?>', {
-                action: 'formulario'
-            }).then((token) => {
-                const idToken = document.getElementById('token');
-                const btn_disable = document.getElementById('btn');
+        (function() {
+            grecaptcha.ready(() => {
+                grecaptcha.execute('<?php echo $claves['publica']; ?>', {
+                    action: 'formulario'
+                }).then((token) => {
+                    const idToken = document.getElementById('token');
+                    const btn_disable = document.getElementById('btn');
 
-                idToken.value = token;
+                    idToken.value = token;
 
-                btn_disable.disabled = false;
+                    btn_disable.disabled = false;
+                })
             })
-        })
+        }())
     </script>
 
-    <!-- <script type="text/javascript">
-        var nav = document.querySelector('nav');
-
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 400) {
-                nav.classList.add('bg-primary', 'bg-gradient', 'shadow');
-            } else {
-                nav.classList.remove('bg-primary', 'bg-gradient', 'shadow');
-            }
-        });
-    </script> -->
+    
+    <script src="public/js/validaFormClient.js"></script>
 </body>
 
 </html>
