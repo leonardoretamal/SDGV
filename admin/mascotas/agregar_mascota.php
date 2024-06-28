@@ -19,6 +19,8 @@ if (!isset($_SESSION['rol']) || !in_array($_SESSION['rol'], $roles_permitidos)) 
 }
 
 ?>
+<br>
+    <h1>Ingresar Nueva Mascota</h1>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
