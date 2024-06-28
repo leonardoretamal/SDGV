@@ -39,7 +39,7 @@ include("../app/config.php");
               <span class="visually-hidden"></span>
             </button> </a>
         </div>
-        <center><img class="border border-1" src="<?php echo $URL; ?>/private/img/logo1.png" width="50%" alt=""></center>
+        <center><img  src="<?php echo $URL; ?>/private/img/logo/Logo_SDGV-removebg.png" width="50%" height="50%" alt=""></center>
         <p class="login-box-msg">Ingresa tus datos</p>
 
         <form action="<?php echo $URL; ?>/app/controllers/login/controller_login.php" method="post">
